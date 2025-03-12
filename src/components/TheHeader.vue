@@ -30,7 +30,7 @@ const showMenuMediaQuery = useMediaQuery('(max-width: 768px)')
 
 <style lang="css" scoped>
 header {
-  @apply border border-none border-bottom-1 border-solid border-greybrand-15;
+  @apply border border-none border-bottom-1 border-solid border-greybrand-15 px-5;
   font-weight: 500;
 }
 
