@@ -4,7 +4,7 @@
 
 <template>
   <section class="hero">
-    <div class="pt-112px h-[50rem] container">
+    <div class="pt-112px h-[690px] container xl:h-[50rem]">
       <div class="subContainer">
         <h1 class="m-none text-[48px] font-semibold leading-[120%] xl:text-[68px]">
           A Digital Product Studio<br>that will Work
@@ -41,6 +41,7 @@
   right: 0;
   position: absolute;
   z-index: -2;
+  pointer-events: none;
 }
 
 .container::after {
@@ -56,6 +57,7 @@
   right: 0;
   position: absolute;
   z-index: -1;
+  pointer-events: none;
 }
 
 .subheader {

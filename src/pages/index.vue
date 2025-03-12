@@ -6,6 +6,8 @@ defineOptions({
 
 <template>
   <Index01Hero />
+  <Index02WhoUseUs />
+  <Index03OurServices />
 </template>
 
 <style lang="css" scoped>
