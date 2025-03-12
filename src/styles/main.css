@@ -1,0 +1,32 @@
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', sans-serif;
+  box-sizing: border-box;
+  @apply bg-greybrand-10 text-white;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+.container {
+  @apply border border-solid border-greybrand-15 border-t-0 min-w-100% lg:min-w-auto p-5 items-center justify-between flex flex-col mx-auto;
+}
+
+.button {
+  @apply rounded-2 text-greybrand-90 transition transition-all transition-duration-200 px-[20px] py-[12px] xl:px-[28px] xl:py-[15px] text-[14px] xl:text-[18px];
+  line-height: 150%;
+}
+
+.button.buttonOutline {
+  @apply border border-greybrand-20 border-solid bg-[#242424]/20;
+  backdrop-filter: blur(12px);
+}
+
+.button.buttonPrimary {
+  @apply bg-greenbrand-50 text-greybrand-15;
+}
