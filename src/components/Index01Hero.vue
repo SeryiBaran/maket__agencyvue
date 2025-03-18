@@ -4,7 +4,7 @@
 
 <template>
   <section class="hero">
-    <div class="pt-112px h-[690px] container xl:h-[50rem]">
+    <div class="pt-112px h-[690px] items-center container xl:h-[50rem]">
       <div class="subContainer">
         <h1 class="m-none text-[48px] font-semibold xl:text-[68px]">
           A Digital Product Studio<br>that will Work

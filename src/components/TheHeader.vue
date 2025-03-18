@@ -6,7 +6,7 @@ const showMenuMediaQuery = useMediaQuery('(max-width: 768px)')
 
 <template>
   <header flex>
-    <div class="container">
+    <div class="gap-2 items-center justify-between container">
       <div v-motion-slide-top class="logo" :delay="0" :duration="200">
         <RouterLink to="/">
           <img src="/assets/Logo.svg" alt="Logo" class="h-[40px] min-[1440px]:h-[60px]">

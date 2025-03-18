@@ -18,7 +18,7 @@ html.dark {
 }
 
 .container {
-  @apply border border-solid border-greybrand-15 border-t-0 min-w-100% lg:min-w-auto p-5 items-center justify-between flex flex-col mx-auto;
+  @apply border border-solid border-greybrand-15 border-t-0 min-w-100% lg:min-w-auto p-5 flex flex-col mx-auto;
 }
 
 .button {
