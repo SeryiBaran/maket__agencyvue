@@ -9,24 +9,22 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <div class="cardIcon color-greenbrand-50 rounded-[10px] flex h-22 w-22 items-center justify-center">
-    <i class="h-10 w-10 inline-block" :class="[props.cardData.icon]" />
+  <div class="cardIcon color-greenbrand-50 flex h-22 w-22 items-center justify-center">
+    <i class="icon h-10 w-10 inline-block" :class="[props.cardData.icon]" />
   </div>
 </template>
 
 <style lang="css" scoped>
 .cardIcon {
-  border: 1px solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(to bottom, #2e2e2e 0%, #2e2e2e00 100%);
+  background-image: linear-gradient(49deg, rgba(158, 255, 0, 0) 69%, rgba(158, 255, 0, 1) 400%),
+    linear-gradient(to bottom, #242424 0%, #24242400 100%); /* 400% is magic number, FUCK FIGMA!!!! */
   position: relative;
   z-index: 0;
+  border-radius: 10px;
 }
 
 .cardIcon::before {
   content: '';
-  background-image: linear-gradient(49deg, rgba(158, 255, 0, 0) 69%, rgba(158, 255, 0, 1) 400%),
-    linear-gradient(to bottom, #242424 0%, #24242400 100%); /* 400% is magic number, FUCK FIGMA!!!! */
   top: 0;
   left: 0;
   bottom: 0;
@@ -34,5 +32,16 @@ const props = defineProps<Props>()
   position: absolute;
   z-index: -2;
   pointer-events: none;
+
+  inset: 0;
+  padding: 1px;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, #2e2e2e 0%, #2e2e2e00 100%);
+  mask:
+    linear-gradient(#000 0 0) exclude,
+    linear-gradient(#000 0 0) content-box;
+}
+
+.icon {
 }
 </style>
