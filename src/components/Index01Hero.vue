@@ -6,10 +6,10 @@
   <section class="hero">
     <div class="pt-112px h-[690px] container xl:h-[50rem]">
       <div class="subContainer">
-        <h1 class="m-none text-[48px] font-semibold leading-[120%] xl:text-[68px]">
+        <h1 class="m-none text-[48px] font-semibold xl:text-[68px]">
           A Digital Product Studio<br>that will Work
         </h1>
-        <div class="subheader text-[18px] text-greybrand-60 leading-[120%] mt-[40px] px-[40px] py-[24px] border border-greybrand-15 rounded-[10px] border-solid bg-[#242424]/20 xl:text-[22px]">
+        <div class="subheader text-[18px] text-greybrand-60 mt-[40px] px-[40px] py-[24px] border border-greybrand-15 rounded-[10px] border-solid bg-[#242424]/20 xl:text-[22px]">
           For <span class="subheaderSelected">Startups</span> , <span class="subheaderSelected">Enterprise leaders</span> , <span class="subheaderSelected">Media & Publishers</span> and <span class="subheaderSelected">Social Good</span>
         </div>
         <div class="font-medium pt-[50px] flex gap-[13px] items-center justify-center">

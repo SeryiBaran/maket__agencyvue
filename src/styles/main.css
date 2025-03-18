@@ -9,6 +9,10 @@ body,
   @apply bg-greybrand-10 text-white;
 }
 
+* {
+  @apply leading-[120%];
+}
+
 html.dark {
   color-scheme: dark;
 }

@@ -4,7 +4,7 @@
 
 <template>
   <section class="whoUseUs">
-    <div class="p-0 container">
+    <div class="p-0 bg-[#242424]/20 container">
       <h2 class="text-4.5 text-greenbrand-99 font-medium leading-[110%] mt-[max-content] px-[34px] py-[20px] border border-greybrand-15 rounded-full border-solid bg-greybrand-10 transform-translate-x--50% transform absolute">
         Trusted By 250+ Companies
       </h2>
