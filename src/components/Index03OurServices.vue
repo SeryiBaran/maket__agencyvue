@@ -10,7 +10,7 @@ const cardData: Card[] = [
 
 <template>
   <section class="ourServices">
-    <CategoryHero title="Our Services" subheader="Transform your brand with our innovative digital solutions that captivate and engage your audience." />
+    <CategoryHero title="Our Services" subheader="Transform your brand with our innovative digital solutions that captivate and engage your audience." :bg="0" />
     <div class="p-0 container">
       <div class="cards flex">
         <div v-for="card in cardData" :key="card.title + card.icon" class="card p-12.5 border-r-1 border-greybrand-15 border-solid last-border-r-0">
@@ -27,6 +27,7 @@ const cardData: Card[] = [
         </div>
       </div>
     </div>
+    <CategoryHero v-for="i in 4" :key="i" title="Our Services" subheader="Transform your brand with our innovative digital solutions that captivate and engage your audience." :bg="i - 1" />
   </section>
 </template>
 
