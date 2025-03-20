@@ -9,14 +9,14 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <div class="cardIcon color-greenbrand-50 flex h-22 w-22 items-center justify-center">
-    <i class="icon h-10 w-10 inline-block" :class="[props.cardData.icon]" />
+  <div class="cardIcon color-greenbrand-50 flex h-17.5 w-17.5 items-center justify-center xl:h-22 xl:w-22">
+    <i class="icon h-7.5 w-7.5 inline-block xl:h-10 xl:w-10" :class="[props.cardData.icon]" />
   </div>
 </template>
 
 <style lang="css" scoped>
 .cardIcon {
-  background-image: linear-gradient(49deg, rgba(158, 255, 0, 0) 69%, rgba(158, 255, 0, 1) 400%),
+  background-image: linear-gradient(49deg, rgba(158, 255, 0, 0) 69%, rgba(158, 255, 0, 1) 500%),
     linear-gradient(to bottom, #242424 0%, #24242400 100%); /* 400% is magic number, FUCK FIGMA!!!! */
   position: relative;
   z-index: 0;

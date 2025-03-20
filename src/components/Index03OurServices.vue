@@ -13,21 +13,22 @@ const cardData: Card[] = [
     <CategoryHero title="Our Services" subheader="Transform your brand with our innovative digital solutions that captivate and engage your audience." :bg="0" />
     <div class="p-0 container">
       <div class="cards flex">
-        <div v-for="card in cardData" :key="card.title + card.icon" class="card p-12.5 border-r-1 border-greybrand-15 border-solid last-border-r-0">
-          <CardIcon :card-data="card" />
-          <p class="cardTitle">
-            {{ card.title }}
-          </p>
-          <p class="cardDescription">
-            {{ card.description }}
-          </p>
-          <RouterLink :to="card.link" class="cardLink">
+        <div v-for="card in cardData" :key="card.title + card.icon" class="card p-10 border-r-1 border-greybrand-15 border-solid flex flex-1 flex-col xl:p-12.5 last-border-r-0">
+          <div class="grow">
+            <CardIcon :card-data="card" />
+            <p class="cardTitle text-6 font-semibold leading-[150%] mt-7.5 xl:text-7.5 xl:mt-10">
+              {{ card.title }}
+            </p>
+            <p class="cardDescription text-4 leading-6 mt-3.5 xl:text-4.5 xl:mt-5">
+              {{ card.description }}
+            </p>
+          </div>
+          <RouterLink :to="card.link" class="cardLink text-4.5 leading-6 mt-15 px-4 py-4.5 text-center rounded-2 bg-greybrand-15 w-full block xl:mt-20">
             Learn More
           </RouterLink>
         </div>
       </div>
     </div>
-    <CategoryHero v-for="i in 4" :key="i" title="Our Services" subheader="Transform your brand with our innovative digital solutions that captivate and engage your audience." :bg="i - 1" />
   </section>
 </template>
 

@@ -9,11 +9,11 @@ const { title, subheader, bg = 0 } = defineProps<{
 <template>
   <div class="p-0 container">
     <div class="bg" :class="[`bg-${bg}`]">
-      <div class="categoryHero py-[120px] text-center w-full">
-        <h2 class="text-12 font-semibold">
+      <div class="categoryHero py-25 text-center w-full xl:py-30">
+        <h2 class="text-9.5 font-semibold xl:text-12">
           {{ title }}
         </h2>
-        <p class="text-4.5 tracking-[-0.6%] pt-3.5">
+        <p class="text-4 pt-2.5 xl:text-4.5 xl:pt-3.5">
           {{ subheader }}
         </p>
       </div>
