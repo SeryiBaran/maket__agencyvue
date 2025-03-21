@@ -1,6 +1,6 @@
 import {
   defineConfig,
-  presetAttributify,
+  // presetAttributify,
   presetIcons,
   // presetMini,
   presetWebFonts,
@@ -14,7 +14,7 @@ export default defineConfig({
   presets: [
     presetWind4(), // Sorry Antfu, it doesn't work normal
     // presetMini(),
-    presetAttributify(),
+    // presetAttributify(),
     presetIcons({
       scale: 1.2,
       warn: true,

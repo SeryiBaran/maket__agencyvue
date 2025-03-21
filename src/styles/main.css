@@ -17,9 +17,15 @@ html.dark {
   color-scheme: dark;
 }
 
-.container {
-  @apply border border-solid border-greybrand-15 border-t-0 min-w-100% lg:min-w-auto p-5 flex flex-col mx-auto;
+header, footer, main > section {
+  @apply max-md:px-4;
 }
+
+.container {
+  @apply border border-solid border-greybrand-15 border-t-0 min-w-100% lg:min-w-auto p-4 md:p-5 flex flex-col mx-auto;
+}
+
+/* TODO */
 
 .button {
   @apply rounded-2 text-greybrand-90 transition transition-all transition-duration-200 px-[20px] py-[12px] xl:px-[28px] xl:py-[15px] text-[14px] xl:text-[18px];

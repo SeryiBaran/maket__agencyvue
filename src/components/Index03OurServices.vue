@@ -19,7 +19,7 @@ const cardData: Card[] = [
             <p class="cardTitle text-6 font-semibold leading-[150%] mt-7.5 xl:text-7.5 xl:mt-10">
               {{ card.title }}
             </p>
-            <p class="cardDescription text-4 leading-6 mt-3.5 xl:text-4.5 xl:mt-5">
+            <p class="cardDescription text-3.5 leading-6 mt-3.5 md:text-4 xl:text-4.5 xl:mt-5">
               {{ card.description }}
             </p>
           </div>

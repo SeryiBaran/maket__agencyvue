@@ -3,16 +3,16 @@
 </script>
 
 <template>
-  <section class="hero">
-    <div class="pt-112px h-[690px] items-center container xl:h-[50rem]">
+  <section class="hero max-md:px-0">
+    <div class="pb-[205px] pt-20 items-center max-md:mx-0 md:pb-[274px] md:pt-28 container xl:h-200">
       <div class="subContainer">
-        <h1 class="m-none text-[48px] font-semibold xl:text-[68px]">
+        <h1 class="m-none text-8.5 font-semibold md:text-12 xl:text-17">
           A Digital Product Studio<br>that will Work
         </h1>
-        <div class="subheader text-[18px] text-greybrand-60 mt-[30px] px-[30px] py-[18px] border border-greybrand-15 rounded-[8px] border-solid bg-[#242424]/20 flex gap-1.5 items-center xl:text-[22px] xl:mt-[40px] xl:px-[40px] xl:py-[24px] xl:rounded-[10px]">
+        <div class="subheader text-4 text-greybrand-60 mt-7.5 px-7.5 py-4.5 border border-greybrand-15 rounded-2 border-solid bg-[#242424]/20 gap-1.5 items-center md:text-4.5 xl:text-5.5 max-md:leading-[150%] xl:mt-10 xl:px-10 xl:py-6 xl:rounded-[10px] md:flex">
           For <span class="subheaderSelected">Startups</span> , <span class="subheaderSelected">Enterprise leaders</span> , <span class="subheaderSelected">Media & Publishers</span> and <span class="subheaderSelected">Social Good</span>
         </div>
-        <div class="font-medium pt-[40px] flex gap-[13px] items-center justify-center">
+        <div class="font-medium pt-10 flex gap-[13px] items-center justify-center">
           <RouterLink to="/work" class="button buttonOutline">
             Our Works
           </RouterLink>
@@ -64,6 +64,6 @@
   backdrop-filter: blur(6px);
 }
 .subheaderSelected {
-  @apply inline-block rounded-2 px-[10px] py-[8px] xl:px-[14px] xl:py-[12px] text-white bg-greybrand-15;
+  @apply md:(inline-block rounded-2 px-2.5 py-2 xl:px-3.5 xl:py-3 text-white bg-greybrand-15);
 }
 </style>
