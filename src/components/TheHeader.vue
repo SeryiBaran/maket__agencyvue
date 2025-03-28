@@ -3,7 +3,8 @@ import { RouterLink } from 'vue-router'
 
 const [showBurgerMenu, toggleBurgerMenu] = useToggle(false)
 
-const maxMd = useMediaQuery('(max-width: 767px)')
+// const maxMd = useMediaQuery('(max-width: 767px)')
+const maxMd = true
 </script>
 
 <template>
@@ -21,8 +22,9 @@ const maxMd = useMediaQuery('(max-width: 767px)')
         Contact Us
       </RouterLink>
 
+      <!-- TODO: outline and animation at all buttons!!! -->
       <button
-        v-show="maxMd" class="pointer text-greenbrand-80 p-1.5 rounded-1.5 bg-greybrand-15 flex h-11.5 w-11.5 items-center justify-center z-101" :class="{
+        v-show="maxMd" class="text-greenbrand-80 p-1.5 outline-0 outline-greenbrand-80/50 outline-solid rounded-1.5 bg-greybrand-15 flex h-11.5 w-11.5 cursor-pointer transition-[background-color,outline-width] duration-100 items-center justify-center z-101 focus:outline-4 active:bg-greybrand-15 hover:bg-greybrand-20" :class="{
           'sticky top--5 md:top-0 right-4': showBurgerMenu && maxMd,
         }"
         @click="toggleBurgerMenu()"
