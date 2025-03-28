@@ -8,14 +8,16 @@ const { title, subheader, bg = 0 } = defineProps<{
 
 <template>
   <div class="p-0 container">
-    <div class="bg" :class="[`bg-${bg}`]">
-      <div class="categoryHero py-25 text-center w-full xl:py-30">
-        <h2 class="text-9.5 font-semibold xl:text-12">
-          {{ title }}
-        </h2>
-        <p class="text-4 pt-2.5 xl:text-4.5 xl:pt-3.5">
-          {{ subheader }}
-        </p>
+    <div class="bg1" :class="[`bg-${bg}`]">
+      <div class="bg2">
+        <div class="categoryHero px-4 py-12.5 text-center w-full md:py-25 xl:py-30">
+          <h2 class="text-7 font-semibold md:text-9.5 xl:text-12">
+            {{ title }}
+          </h2>
+          <p class="text-3.5 leading-6 pt-1.5 md:text-4 xl:text-4.5 md:pt-2.5 xl:pt-3.5">
+            {{ subheader }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -27,10 +29,13 @@ const { title, subheader, bg = 0 } = defineProps<{
   z-index: 0;
   background: rgba(172, 255, 36, 0.035);
 }
-.bg {
+.bg1 {
   position: relative;
 }
-.bg::before {
+.bg2 {
+  position: relative;
+}
+.bg2::before {
   content: '';
   background: url('/assets/HeroBGRECTS.png');
   opacity: 0.6;
@@ -39,10 +44,9 @@ const { title, subheader, bg = 0 } = defineProps<{
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;
   pointer-events: none;
 }
-.bg::after {
+.bg1::before {
   content: '';
   background-repeat: no-repeat;
   background-position: center center;
@@ -53,20 +57,19 @@ const { title, subheader, bg = 0 } = defineProps<{
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -2;
   pointer-events: none;
   filter: saturate(0) brightness(0.15);
 }
-.bg.bg-0::after {
+.bg1.bg-0::before {
   background-image: url('/assets/CategoryHeroLines0.webp');
 }
-.bg.bg-1::after {
+.bg1.bg-1::before {
   background-image: url('/assets/CategoryHeroLines1.webp');
 }
-.bg.bg-2::after {
+.bg1.bg-2::before {
   background-image: url('/assets/CategoryHeroLines2.webp');
 }
-.bg.bg-3::after {
+.bg1.bg-3::before {
   background-image: url('/assets/CategoryHeroLines3.webp');
 }
 </style>

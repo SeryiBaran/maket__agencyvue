@@ -12,18 +12,20 @@ const cardData: Card[] = [
   <section class="ourServices">
     <CategoryHero title="Our Services" subheader="Transform your brand with our innovative digital solutions that captivate and engage your audience." :bg="0" />
     <div class="p-0 container">
-      <div class="cards flex">
-        <div v-for="card in cardData" :key="card.title + card.icon" class="card p-10 border-r-1 border-greybrand-15 border-solid flex flex-1 flex-col xl:p-12.5 last-border-r-0">
+      <div class="cards flex flex-col md:flex-row">
+        <div v-for="card in cardData" :key="card.title + card.icon" class="card p-7.5 border-b-1 border-greybrand-15 border-solid flex flex-1 flex-col md:p-10 xl:p-12.5 last:border-b-0 md:border-r-1 md:last-border-r-0">
           <div class="grow">
-            <CardIcon :card-data="card" />
-            <p class="cardTitle text-6 font-semibold leading-[150%] mt-7.5 xl:text-7.5 xl:mt-10">
-              {{ card.title }}
-            </p>
-            <p class="cardDescription text-3.5 leading-6 mt-3.5 md:text-4 xl:text-4.5 xl:mt-5">
+            <div class="flex gap-3.5 items-center md:block">
+              <CardIcon :card-data="card" />
+              <p class="cardTitle text-5 font-semibold leading-[150%] md:text-6 xl:text-7.5 md:mt-7.5 xl:mt-10">
+                {{ card.title }}
+              </p>
+            </div>
+            <p class="cardDescription text-3.5 leading-6 mt-6 md:text-4 xl:text-4.5 md:mt-3.5 xl:mt-5">
               {{ card.description }}
             </p>
           </div>
-          <RouterLink :to="card.link" class="cardLink text-4.5 leading-6 mt-15 px-4 py-4.5 text-center rounded-2 bg-greybrand-15 w-full block xl:mt-20">
+          <RouterLink :to="card.link" class="cardLink text-3.5 leading-6 mt-6 px-4 py-3.5 text-center rounded-2 bg-greybrand-15 w-full block xl:text-4.5 md:mt-15 xl:mt-20 xl:py-4.5">
             Learn More
           </RouterLink>
         </div>

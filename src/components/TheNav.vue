@@ -1,20 +1,41 @@
 <script lang="ts" setup>
+const props = defineProps<{
+  showBurgerMenu: boolean
+  toggleBurgerMenu: () => void
+}>()
 
+const maxMd = useMediaQuery('(max-width: 767px)')
+
+const links = [
+  { name: 'Home', link: '/' },
+  { name: 'Services', link: '/services' },
+  { name: 'Work', link: '/work' },
+  { name: 'Process', link: '/process' },
+  { name: 'About', link: '/about' },
+  { name: 'Careers', link: '/careers' },
+]
 </script>
 
 <template>
-  <nav>
-    <ul>
+  <nav
+    :class="{
+      burger: props.showBurgerMenu && maxMd,
+      hidden: (!props.showBurgerMenu) && maxMd,
+    }"
+    class="flex"
+  >
+    <ul class="flex gap-7.5">
       <li
-        v-for="link in [{ name: 'Home', link: '/' },
-                        { name: 'Services', link: '/services' },
-                        { name: 'Work', link: '/work' },
-                        { name: 'Process', link: '/process' },
-                        { name: 'About', link: '/about' },
-                        { name: 'Careers', link: '/careers' }]" :key="`${link.name}__ID__${link.link}`"
+        v-for="link in links" :key="`${link.name}__ID__${link.link}`"
+        class="flex items-center"
       >
-        <RouterLink :to="link.link" active-class="activeLink" class="link button">
+        <RouterLink :to="link.link" active-class="activeLink" class="button px-0 py-[12px] min-[1440px]:py-[14px]" @click="toggleBurgerMenu()">
           {{ link.name }}
+        </RouterLink>
+      </li>
+      <li v-show="maxMd" class="flex items-center">
+        <RouterLink to="/contacts" class="contactButton button buttonPrimary">
+          Contact Us
         </RouterLink>
       </li>
     </ul>
@@ -23,25 +44,26 @@
 
 <style scoped>
 nav {
-  display: flex;
+  backdrop-filter: blur(12px);
 }
 
-nav ul {
-  display: flex;
-  gap: 30px;
+.activeLink {
+  @apply bg-greybrand-15 text-white px-[22px] min-[1440px]:px-[24px] font-semibold;
 }
 
-nav ul li {
-  display: flex;
-  align-items: center;
+.burger {
+  @apply fixed top-0 right-0 bottom-0 left-0 bg-greybrand-10/90 z-100 p-4;
 }
 
-.link {
-  @apply px-0 py-[12px] min-[1440px]:py-[14px];
+.burger ul {
+  @apply flex-col gap-0 items-stretch w-full;
 }
 
-.link.activeLink {
-  @apply bg-greybrand-15 text-white px-[22px] min-[1440px]:px-[24px];
-  font-weight: 600;
+.burger li {
+  @apply;
+}
+
+.burger a {
+  @apply flex w-full items-center justify-center;
 }
 </style>

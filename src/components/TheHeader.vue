@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 import { RouterLink } from 'vue-router'
 
-const showMenuMediaQuery = useMediaQuery('(max-width: 767px)')
+const [showBurgerMenu, toggleBurgerMenu] = useToggle(false)
+
+const maxMd = useMediaQuery('(max-width: 767px)')
 </script>
 
 <template>
@@ -13,15 +15,18 @@ const showMenuMediaQuery = useMediaQuery('(max-width: 767px)')
         </RouterLink>
       </div>
 
-      <div v-show="!showMenuMediaQuery" v-motion-slide-top class="navContainer" :delay="30" :duration="200">
-        <TheNav />
-      </div>
+      <TheNav v-motion-slide-top :delay="30" :duration="200" :show-burger-menu :toggle-burger-menu />
 
-      <RouterLink v-show="!showMenuMediaQuery" v-motion-slide-top to="/contacts" class="contactButton button buttonPrimary" :delay="60" :duration="200">
+      <RouterLink v-show="!maxMd" v-motion-slide-top to="/contacts" class="contactButton button buttonPrimary" :delay="60" :duration="200">
         Contact Us
       </RouterLink>
 
-      <button v-show="showMenuMediaQuery" class="text-greenbrand-80 p-1.5 rounded-1.5 bg-greybrand-15 flex h-11.5 w-11.5 items-center justify-center">
+      <button
+        v-show="maxMd" class="pointer text-greenbrand-80 p-1.5 rounded-1.5 bg-greybrand-15 flex h-11.5 w-11.5 items-center justify-center z-101" :class="{
+          'sticky top--5 md:top-0 right-4': showBurgerMenu && maxMd,
+        }"
+        @click="toggleBurgerMenu()"
+      >
         <span class="i-heroicons:bars-3-bottom-right text-8.5 block" />
       </button>
     </div>
@@ -30,7 +35,7 @@ const showMenuMediaQuery = useMediaQuery('(max-width: 767px)')
 
 <style lang="css" scoped>
 header {
-  @apply border border-none border-bottom-1 border-solid border-greybrand-15 px-4 md:px-5;
+  @apply border border-0 border-b-1 border-solid border-greybrand-15 px-4 md:px-5 sticky top--5 md:top-0 bg-greybrand-10 z-1;
   font-weight: 500;
 }
 
@@ -47,7 +52,7 @@ header {
 }
 
 .contactButton {
-  @apply text-[14px] min-[1440px]:text-[18px] p-[12px_18px] min-[1440px]:p-[16px_24px];
+  @apply text-[14px] xl:text-[18px] p-[12px_18px] xl:p-[16px_24px];
   line-height: 150%;
 }
 </style>

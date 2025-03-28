@@ -49,7 +49,6 @@
   background: url('/assets/AbstractDesign.png');
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: 100%;
   opacity: 1;
   top: 0;
   left: 0;
@@ -58,6 +57,12 @@
   position: absolute;
   z-index: -1;
   pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .container::after {
+    background-size: 240%;
+  }
 }
 
 .subheader {

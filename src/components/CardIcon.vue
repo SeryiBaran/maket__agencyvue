@@ -9,8 +9,9 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <div class="cardIcon color-greenbrand-50 flex h-17.5 w-17.5 items-center justify-center xl:h-22 xl:w-22">
-    <i class="icon h-7.5 w-7.5 inline-block xl:h-10 xl:w-10" :class="[props.cardData.icon]" />
+  <div class="cardIcon color-greenbrand-50 flex h-14.5 min-w-14.5 items-center justify-center md:h-17.5 md:w-17.5 xl:h-22 xl:w-22">
+    <!-- min-w-14.5 is fix -->
+    <i class="icon h-6.5 w-6.5 inline-block md:h-7.5 md:w-7.5 xl:h-10 xl:w-10" :class="[props.cardData.icon]" />
   </div>
 </template>
 
@@ -40,8 +41,5 @@ const props = defineProps<Props>()
   mask:
     linear-gradient(#000 0 0) exclude,
     linear-gradient(#000 0 0) content-box;
-}
-
-.icon {
 }
 </style>
