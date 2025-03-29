@@ -3,8 +3,7 @@ import { RouterLink } from 'vue-router'
 
 const [showBurgerMenu, toggleBurgerMenu] = useToggle(false)
 
-// const maxMd = useMediaQuery('(max-width: 767px)')
-const maxMd = true
+const maxMd = useMediaQuery('(max-width: 767px)')
 </script>
 
 <template>
