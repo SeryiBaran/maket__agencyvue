@@ -16,36 +16,36 @@ type FaqData = FaqDataPart[]
 const faqData: FaqData = [
   [{
     id: nanoid(),
-    title: 'What services does SquareUp provide?1',
+    title: 'What services does SquareUp provide?',
     answer: 'SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more.',
   }, {
     id: nanoid(),
-    title: 'What services does SquareUp provide?2',
+    title: 'How can SquareUp help my business?',
     answer: 'SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more.',
   }, {
     id: nanoid(),
-    title: 'What services does SquareUp provide?3',
+    title: 'What industries does SquareUp work with?',
     answer: 'SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more.',
   }, {
     id: nanoid(),
-    title: 'What services does SquareUp provide?4',
+    title: 'How long does it take to complete a project with SquareUp?',
     answer: 'SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more.',
   }],
   [{
     id: nanoid(),
-    title: 'What services does SquareUp provide?5',
+    title: 'Do you offer ongoing support and maintenance after the project is completed?',
     answer: 'SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more.',
   }, {
     id: nanoid(),
-    title: 'What services does SquareUp provide?6',
+    title: 'Can you work with existing design or development frameworks?',
     answer: 'SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more.',
   }, {
     id: nanoid(),
-    title: 'What services does SquareUp provide?7',
+    title: 'How involved will I be in the project development process?',
     answer: 'SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more.',
   }, {
     id: nanoid(),
-    title: 'What services does SquareUp provide?8',
+    title: 'Can you help with website or app maintenance and updates?',
     answer: 'SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more.',
   }],
 ]
@@ -67,7 +67,7 @@ function handleClick(id: string) {
   <section class="faq">
     <CategoryHero title="Frequently Asked Questions" subheader="Still you have any questions? Contact our Team via hello@squareup.com" :bg="3" />
     <div class="p-0 container">
-      <div class="grid grid-cols-2 overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 overflow-hidden">
         <div
           v-for="(faqPart, indexPart) in faqData"
           :key="indexPart"
@@ -90,7 +90,7 @@ function handleClick(id: string) {
             <div class="faqElemIcon">
               <CardIcon :enable-hover-effect="false" :inherit-icon-color="true" :text-instead-of-icon="String(getIndex(faqElem) + 1).padStart(2, '0')" :show-corner-gradient="false" class="h-13 min-w-13 md:h-15.5 md:w-15.5 xl:h-20 xl:w-20" />
             </div>
-            <p class="faqElemTitle text-5 font-medium leading-[150%] xl:text-7">
+            <p class="faqElemTitle text-4 font-medium leading-[150%] md:text-4.5 xl:text-5.5">
               {{ faqElem.title }}
             </p>
             <i class="i-heroicons:plus-solid faqElemOpenCloseIcon text-inherit h-8 w-8 block" />

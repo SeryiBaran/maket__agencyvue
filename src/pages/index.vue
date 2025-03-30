@@ -6,6 +6,7 @@ defineOptions({
 
 <template>
   <div>
+    <h1 class="absolute top-0 left-0 z-10000 text-xl">АХТУНГ! Это пока даже не 10% макета!</h1>
     <Index01Hero />
     <Index02WhoUseUs />
     <Index03OurServices />
