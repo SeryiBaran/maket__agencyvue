@@ -91,11 +91,19 @@ function handleClick(id: string) {
               {{ faqElem.title }}
             </p>
             <i class="i-heroicons:plus-solid faqElemOpenCloseIcon text-inherit h-8 w-8 block" />
-            <Transition name="fade">
-              <p v-show="faqElem.id === activeId" class="faqElemAnswer descriptionText leading-[150%]">
+            <Motion
+              :initial="{
+                height: 0,
+              }"
+              :enter="{
+                height: 'auto',
+              }"
+              class="faqElemAnswer"
+            >
+              <p v-show="faqElem.id === activeId" class="descriptionText leading-[150%]">
                 {{ faqElem.answer }}
               </p>
-            </Transition>
+            </Motion>
           </div>
         </div>
       </div>
@@ -114,12 +122,7 @@ function handleClick(id: string) {
   align-items: center;
 }
 
-.faqElem * {
-  transition-duration: 200ms;
-  transition-property: color;
-}
-
-.faqElem .faqElemOpenCloseIcon {
+.faqElem > * {
   transition-duration: 200ms;
   transition-property: color, transform;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -146,7 +149,7 @@ function handleClick(id: string) {
   grid-column: 2 / span 2;
 }
 
-.faqElem.faqElemActive *:not(.faqElemAnswer) {
+.faqElem.faqElemActive :where(.faqElemIcon, .faqElemTitle, .faqElemOpenCloseIcon) {
   @apply color-greenbrand-70;
 }
 

@@ -20,7 +20,7 @@ const {
   <div class="cardIcon color-greenbrand-50 text-center flex h-14.5 min-w-14.5 items-center justify-center md:h-17.5 md:w-17.5 xl:h-22 xl:w-22" :class="{ showCornerGradient, inheritIconColor, enableHoverEffect }">
     <!-- min-w-14.5 is fix -->
     <i v-if="!textInsteadOfIcon" class="icon" :class="[props.icon]" />
-    <span v-else class="icon text-5 font-semibold md:text-6 xl:text-7">{{ textInsteadOfIcon }}</span>
+    <span v-else class="icon textIcon text-5 font-semibold md:text-6 xl:text-7">{{ textInsteadOfIcon }}</span>
   </div>
 </template>
 
@@ -70,14 +70,11 @@ const {
   mask:
     linear-gradient(#000 0 0) exclude,
     linear-gradient(#000 0 0) content-box;
-  transition-duration: 200ms;
-  transition-property: --myBeforeGradientColor2;
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .cardIcon.enableHoverEffect {
   transition-duration: 200ms;
-  transition-property: box-shadow, transform, background-color;
+  transition-property: box-shadow, transform, background-color, --myBeforeGradientColor2;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
