@@ -59,6 +59,8 @@ function getIndex(faqElem: FaqElem) {
 function handleClick(id: string) {
   activeId.value = activeId.value === id ? null : id
 }
+
+// TODO: dont use @formkit/auto-animate/vue
 </script>
 
 <template>
