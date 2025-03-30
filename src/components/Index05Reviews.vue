@@ -96,9 +96,9 @@ const reviewsData: Review[] = [
           <p class="descriptionText leading-[150%] mt-5 grow xl:mt-6">
             {{ review.description }}
           </p>
-          <div class="mt-6 px-3.5 py-4.125 border border-greybrand-15 rounded-2 bg-[#242424]/20 flex gap-2.5 md:(mt-7.5 p-3.5) xl:(mt-10 px-5 py-5.375)">
-            <div class="userAvatarBG rounded-2 bg-[#ACFF24]/30 relative overflow-hidden">
-              <img class="userAvatar h-10 aspect-square object-cover md:h-12 xl:h-15" :src="images[review.user.avatar]" alt="User Avatar">
+          <div class="mt-6 px-3.5 py-4.125 border border-greybrand-15 rounded-2 bg-[#242424]/20 flex gap-2.5 items-center md:(mt-7.5 p-3.5) xl:(mt-10 px-5 py-5.375)">
+            <div class="userAvatarBG rounded-1 bg-[#ACFF24]/30 h-10 w-10 relative overflow-hidden md:(rounded-1.5 h-12 w-12) xl:(rounded-2 h-15 w-15)">
+              <img class="userAvatar aspect-square object-cover" :src="images[review.user.avatar]" alt="User Avatar">
             </div>
             <div class="pl-2 grow">
               <p class="text-4 font-medium leading-[150%] xl:text-5">
