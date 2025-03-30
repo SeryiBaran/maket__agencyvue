@@ -29,7 +29,7 @@ const links = [
         v-for="link in links" :key="`${link.name}__ID__${link.link}`"
         class="flex items-center"
       >
-        <RouterLink :to="link.link" active-class="activeLink" class="button px-0 py-[12px] min-[1440px]:py-[14px]" @click="toggleBurgerMenu()">
+        <RouterLink :to="link.link" active-class="activeLink" class="button buttonOutlineFocusVisible px-0 py-[12px] min-[1440px]:py-[14px] [&:not(.activeLink)]:(bg-transparent hover:not-active:bg-transparent)" @click="toggleBurgerMenu()">
           {{ link.name }}
         </RouterLink>
       </li>

@@ -1,5 +1,41 @@
 <script lang="ts" setup>
-const ref1 = ref()
+import { useMotion } from '@vueuse/motion'
+
+const button1 = ref(null)
+const button2 = ref(null)
+
+const refs = [button1, button2]
+
+refs.forEach((ref, index) => {
+  const { variant } = useMotion(ref, {
+    initial: {
+      y: 100,
+      opacity: 0,
+    },
+    enter: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 320,
+        damping: 20,
+        delay: 300 + index * 50,
+        onComplete: () => {
+          variant.value = 'levitate'
+        },
+      },
+    },
+    levitate: {
+      y: 10,
+      transition: {
+        duration: 1500,
+        repeat: Number.POSITIVE_INFINITY,
+        ease: 'easeInOut',
+        repeatType: 'mirror',
+      },
+    },
+  })
+})
 </script>
 
 <template>
@@ -16,10 +52,10 @@ const ref1 = ref()
           For <span class="subheaderSelected">Startups</span> , <span class="subheaderSelected">Enterprise leaders</span> , <span class="subheaderSelected">Media & Publishers</span> and <span class="subheaderSelected">Social Good</span>
         </div>
         <div class="font-medium pt-10 flex gap-[13px] items-center justify-center">
-          <RouterLink v-motion-pop :delay="300" :duration="200" to="/work" class="button buttonOutline">
+          <RouterLink ref="button1" to="/work" class="button buttonOutline">
             Our Works
           </RouterLink>
-          <RouterLink v-motion-pop :delay="300" :duration="200" to="/work" class="button buttonPrimary">
+          <RouterLink ref="button2" to="/work" class="button buttonPrimary">
             Contact Us
           </RouterLink>
         </div>

@@ -9,21 +9,21 @@ const maxMd = useMediaQuery('(max-width: 767px)')
 <template>
   <header class="flex max-md:px-0">
     <div class="gap-2 items-center justify-between max-md:mx-0 container">
-      <div v-motion-slide-top class="logo" :delay="0" :duration="200">
+      <div v-motion-slide-top class="logo" :delay="0" :duration="400">
         <RouterLink to="/">
           <img src="/assets/Logo.svg" alt="Logo" class="h-[40px] min-[1440px]:h-[60px]">
         </RouterLink>
       </div>
 
-      <TheNav v-motion-slide-top :delay="30" :duration="200" :show-burger-menu :toggle-burger-menu />
+      <TheNav v-motion-slide-top :delay="60" :duration="400" :show-burger-menu :toggle-burger-menu />
 
-      <RouterLink v-show="!maxMd" v-motion-slide-top to="/contacts" class="contactButton button buttonPrimary" :delay="60" :duration="200">
+      <RouterLink v-show="!maxMd" v-motion-slide-top to="/contacts" class="contactButton button buttonPrimary" :delay="120" :duration="400">
         Contact Us
       </RouterLink>
 
       <!-- TODO: outline and animation at all buttons!!! -->
       <button
-        v-show="maxMd" class="text-greenbrand-80 p-1.5 outline-0 outline-greenbrand-80/50 outline-solid rounded-1.5 bg-greybrand-15 flex h-11.5 w-11.5 cursor-pointer transition-[background-color,outline-width] duration-100 items-center justify-center z-101 focus:outline-4 active:bg-greybrand-15 hover:bg-greybrand-20" :class="{
+        v-show="maxMd" class="button buttonIcon z-101" :class="{
           'sticky top--5 md:top-0 right-4': showBurgerMenu && maxMd,
         }"
         @click="toggleBurgerMenu()"
@@ -46,10 +46,14 @@ header {
 }
 
 .logo a {
-  @apply transition transition-all transition-duration-300 transform hover:-translate-x-1 hover:scale-103;
+  @apply transition transition-all transition-duration-300 transform hover:scale-103;
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.logo a:hover {
+  transform: translateY(-0.1rem);
 }
 
 .contactButton {

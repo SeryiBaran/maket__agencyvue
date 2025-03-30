@@ -14,7 +14,7 @@ const cardData: Card[] = [
     <CategoryHero title="Why Choose SquareUp?" subheader="Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results." :bg="1" />
     <div class="p-0 container">
       <div class="cards grid grid-cols-1 md:grid-cols-2">
-        <div v-for="card in cardData" :key="card.title + card.icon" class="card p-10 px-7.5 border-b-1 border-greybrand-15 border-solid flex flex-1 flex-col md:p-15 xl:p-20 last:border-b-0 md:border-r-1 md:last-border-r-0">
+        <div v-for="(card, index) in cardData" :key="card.title + card.icon" v-motion-fade-visible-once :duration="400" :delay="index * 50" class="card p-10 px-7.5 border-b-1 border-greybrand-15 border-solid flex flex-1 flex-col md:p-15 xl:p-20 last:border-b-0 md:border-r-1 md:last-border-r-0">
           <div class="grow">
             <div class="flex gap-3.5 items-center md:gap-5">
               <CardIcon :card-data="card" />

@@ -9,6 +9,10 @@ body,
   @apply bg-greybrand-10 text-white;
 }
 
+::selection {
+  background-color: color-mix(in oklch, var(--colors-greenbrand-50) 25%, transparent);
+}
+
 * {
   @apply leading-[120%];
 }
@@ -28,17 +32,33 @@ main>section {
 }
 
 .button {
-  @apply rounded-2 text-greybrand-90 transition transition-all transition-duration-200 px-[20px] py-[12px] xl:px-[28px] xl:py-[15px] text-[14px] xl:text-[18px];
+  @apply bg-greybrand-15 hover:not-active:bg-greybrand-20 rounded-2 text-greybrand-90 transition transition-[background-color,outline-width,transform] transition-duration-100 px-[20px] py-[12px] xl:px-[28px] xl:py-[15px] text-[14px] xl:text-[18px] outline-greenbrand-50/40 outline-solid outline-0;
   line-height: 150%;
 }
 
+.button:hover {
+  transform: translateY(-0.1rem);
+}
+
+.button:not(.buttonOutlineFocusVisible):focus {
+  @apply outline-4;
+}
+
+.button.buttonOutlineFocusVisible:focus-visible {
+  @apply outline-4;
+}
+
 .button.buttonOutline {
-  @apply border border-greybrand-20 border-solid bg-[#242424]/20;
+  @apply border border-greybrand-20 border-solid bg-[#242424]/20 hover:not-active:bg-[#242424]/80;
   backdrop-filter: blur(12px);
 }
 
 .button.buttonPrimary {
-  @apply bg-greenbrand-50 text-greybrand-15;
+  @apply bg-greenbrand-50 hover:not-active:bg-greenbrand-70 text-greybrand-15;
+}
+
+.button.buttonIcon {
+  @apply text-greenbrand-80 p-1.5 rounded-1.5 bg-greybrand-15 flex h-11.5 w-11.5 cursor-pointer items-center justify-center hover:not-active:bg-greybrand-20;
 }
 
 .descriptionText {

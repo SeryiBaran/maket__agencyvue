@@ -6,6 +6,7 @@ import {
   presetWebFonts,
   presetWind4,
   transformerDirectives,
+  transformerVariantGroup,
 } from 'unocss'
 
 export default defineConfig({
@@ -73,5 +74,6 @@ export default defineConfig({
   },
   transformers: [
     transformerDirectives(),
+    transformerVariantGroup(),
   ],
 })

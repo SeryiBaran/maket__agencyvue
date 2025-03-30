@@ -13,7 +13,7 @@ const cardData: Card[] = [
     <CategoryHero title="Our Services" subheader="Transform your brand with our innovative digital solutions that captivate and engage your audience." :bg="0" />
     <div class="p-0 container">
       <div class="cards flex flex-col md:flex-row">
-        <div v-for="card in cardData" :key="card.title + card.icon" class="card p-7.5 border-b-1 border-greybrand-15 border-solid flex flex-1 flex-col md:p-10 xl:p-12.5 last:border-b-0 md:border-r-1 md:last-border-r-0">
+        <div v-for="(card, index) in cardData" :key="card.title + card.icon" v-motion-fade-visible-once :duration="400" :delay="index * 50" class="card p-7.5 border-b-1 border-greybrand-15 border-solid flex flex-1 flex-col md:p-10 xl:p-12.5 last:border-b-0 md:border-r-1 md:last-border-r-0">
           <div class="grow">
             <div class="flex gap-3.5 items-center md:block">
               <CardIcon :card-data="card" />
@@ -25,7 +25,7 @@ const cardData: Card[] = [
               {{ card.description }}
             </p>
           </div>
-          <RouterLink :to="card.link" class="cardLink text-3.5 leading-6 mt-6 px-4 py-3.5 text-center rounded-2 bg-greybrand-15 w-full block xl:text-4.5 md:mt-15 xl:mt-20 xl:py-4.5">
+          <RouterLink :to="card.link" class="cardLink button text-3.5 leading-6 mt-6 px-4 py-3.5 text-center rounded-2 w-full block xl:text-4.5 md:mt-15 xl:mt-20 xl:py-4.5">
             Learn More
           </RouterLink>
         </div>

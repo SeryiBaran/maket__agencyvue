@@ -5,10 +5,12 @@ defineOptions({
 </script>
 
 <template>
-  <Index01Hero />
-  <Index02WhoUseUs />
-  <Index03OurServices />
-  <Index04WhyChooseUs />
+  <div>
+    <Index01Hero />
+    <Index02WhoUseUs />
+    <Index03OurServices />
+    <Index04WhyChooseUs />
+  </div>
 </template>
 
 <style lang="css" scoped>
