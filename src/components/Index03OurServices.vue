@@ -16,7 +16,7 @@ const cardData: Card[] = [
         <div v-for="(card, index) in cardData" :key="card.title + card.icon" v-motion-fade-visible-once :duration="400" :delay="index * 50" class="card p-7.5 border-b-1 border-greybrand-15 border-solid flex flex-1 flex-col md:p-10 xl:p-12.5 last:border-b-0 md:border-r-1 md:last-border-r-0">
           <div class="grow">
             <div class="flex gap-3.5 items-center md:block">
-              <CardIcon :card-data="card" />
+              <CardIcon :icon="card.icon" />
               <p class="cardTitle text-5 font-semibold leading-[150%] md:text-6 xl:text-7.5 md:mt-7.5 xl:mt-10">
                 {{ card.title }}
               </p>

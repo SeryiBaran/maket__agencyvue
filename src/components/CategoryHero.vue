@@ -14,7 +14,7 @@ const { title, subheader, bg = 0 } = defineProps<{
           <h2 v-motion-slide-visible-once-bottom :duration="300" class="text-7 font-semibold md:text-9.5 xl:text-12">
             {{ title }}
           </h2>
-          <p v-motion-fade-visible-once :duration="400" :delay="300" class="text-3.5 leading-6 pt-1.5 md:text-4 xl:text-4.5 md:pt-2.5 xl:pt-3.5">
+          <p v-motion-fade-visible-once :duration="400" :delay="300" class="text-3.5 leading-6 mx-auto pt-1.5 max-w-1000px md:text-4 xl:text-4.5 md:pt-2.5 xl:pt-3.5">
             {{ subheader }}
           </p>
         </div>

@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-import type { Card } from '~/shared/types'
-
 interface Props {
-  cardData: Card
+  icon: string
 }
 
 const props = defineProps<Props>()
@@ -11,7 +9,7 @@ const props = defineProps<Props>()
 <template>
   <div class="cardIcon iconAnimations color-greenbrand-50 flex h-14.5 min-w-14.5 items-center justify-center md:h-17.5 md:w-17.5 xl:h-22 xl:w-22">
     <!-- min-w-14.5 is fix -->
-    <i class="icon h-6.5 w-6.5 inline-block md:h-7.5 md:w-7.5 xl:h-10 xl:w-10" :class="[props.cardData.icon]" />
+    <i class="icon h-6.5 w-6.5 inline-block md:h-7.5 md:w-7.5 xl:h-10 xl:w-10" :class="[props.icon]" />
   </div>
 </template>
 
