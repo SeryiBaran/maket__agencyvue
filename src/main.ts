@@ -1,3 +1,4 @@
+import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 import { MotionPlugin } from '@vueuse/motion'
 import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
@@ -23,4 +24,5 @@ const router = createRouter({
 })
 app.use(router)
 app.use(MotionPlugin)
+app.use(autoAnimatePlugin)
 app.mount('#app')

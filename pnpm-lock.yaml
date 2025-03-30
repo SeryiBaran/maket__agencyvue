@@ -15,6 +15,9 @@ importers:
       '@fontsource/barlow':
         specifier: ^5.2.5
         version: 5.2.5
+      '@formkit/auto-animate':
+        specifier: ^0.8.2
+        version: 0.8.2
       '@vueuse/core':
         specifier: ^12.8.0
         version: 12.8.0(typescript@5.8.2)
@@ -626,6 +629,9 @@ packages:
 
   '@fontsource/barlow@5.2.5':
     resolution: {integrity: sha512-p+2XXEM7v85kbn0Dh8g0YLMjTCDiRCAi9nHik6w/2owZ9CkT1yYGGgaUMshJRqykh7efv1gE0QxAkOhZHd8tEg==}
+
+  '@formkit/auto-animate@0.8.2':
+    resolution: {integrity: sha512-SwPWfeRa5veb1hOIBMdzI+73te5puUBHmqqaF1Bu7FjvxlYSz/kJcZKSa9Cg60zL0uRNeJL2SbRxV6Jp6Q1nFQ==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -3772,6 +3778,8 @@ snapshots:
       levn: 0.4.1
 
   '@fontsource/barlow@5.2.5': {}
+
+  '@formkit/auto-animate@0.8.2': {}
 
   '@humanfs/core@0.19.1': {}
 

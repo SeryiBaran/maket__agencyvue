@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useAutoAnimate } from '@formkit/auto-animate/vue'
 import { nanoid } from 'nanoid'
 import { isEven } from '~/shared/utils'
 
@@ -91,19 +92,11 @@ function handleClick(id: string) {
               {{ faqElem.title }}
             </p>
             <i class="i-heroicons:plus-solid faqElemOpenCloseIcon text-inherit h-8 w-8 block" />
-            <Motion
-              :initial="{
-                height: 0,
-              }"
-              :enter="{
-                height: 'auto',
-              }"
-              class="faqElemAnswer"
-            >
-              <p v-show="faqElem.id === activeId" class="descriptionText leading-[150%]">
+            <div v-auto-animate class="faqElemAnswer">
+              <p v-if="faqElem.id === activeId" class="descriptionText leading-[150%]">
                 {{ faqElem.answer }}
               </p>
-            </Motion>
+            </div>
           </div>
         </div>
       </div>
@@ -155,16 +148,5 @@ function handleClick(id: string) {
 
 .faqElem.faqElemActive .faqElemOpenCloseIcon {
   transform: rotateZ(45deg);
-}
-
-/* Vue Transition */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 200ms ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
