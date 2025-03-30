@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { Review } from '~/shared/types'
+import { isEven } from '~/shared/utils'
 
 const images = ref<string[]>([]);
 
@@ -71,16 +72,25 @@ const reviewsData: Review[] = [
     },
   },
 ]
-
-const bind = computed(() => `url(${images.value[reviewsData[0].user.avatar]})`)
 </script>
 
 <template>
   <section class="ourServices">
     <CategoryHero title="What our Clients say About us" subheader="At SquareUp, we take pride in delivering exceptional digital products and services that drive success for our clients. Here's what some of our satisfied clients have to say about their experience working with us" :bg="2" />
     <div class="p-0 container">
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <div v-for="(review, index) in reviewsData" :key="review.title" v-motion-fade-visible-once :duration="400" :delay="index * 50" class="px-6 py-10 border-b-1 border-greybrand-15 border-solid flex flex-col md:(px-15 py-20 border-r-1 last-border-r-0) xl:(px-20 py-25) last:border-b-0">
+      <div class="grid grid-cols-1 overflow-hidden md:grid-cols-2">
+        <div
+          v-for="(review, index) in reviewsData"
+          :key="review.title"
+
+          v-motion
+          :initial="{ opacity: 0, x: 100 * (isEven(index) ? -1 : 1) }"
+          :visible-once="{ opacity: 1, x: 0 }"
+          :duration="400"
+          :delay="(isEven(index) ? 0 : 100)"
+
+          class="px-6 py-10 border-b-1 border-greybrand-15 border-solid flex flex-col md:(px-15 py-20 border-r-1 last-border-r-0) xl:(px-20 py-25) last:border-b-0"
+        >
           <p class="text-5 text-greenbrand-80 font-medium leading-[150%] xl:text-7">
             {{ review.title }}
           </p>
@@ -88,7 +98,9 @@ const bind = computed(() => `url(${images.value[reviewsData[0].user.avatar]})`)
             {{ review.description }}
           </p>
           <div class="mt-6 px-3.5 py-4.125 border border-greybrand-15 rounded-2 bg-[#242424]/20 flex gap-2.5 md:(mt-7.5 p-3.5) xl:(mt-10 px-5 py-5.375)">
-            <div class="userAvatar rounded-2 bg-[#ACFF24]/30 h-10 aspect-square relative overflow-hidden object-cover md:h-12 xl:h-15" :style="`background-image: url(${images[review.user.avatar]})`" />
+            <div class="userAvatarBG rounded-2 bg-[#ACFF24]/30 relative overflow-hidden">
+              <img class="userAvatar h-10 aspect-square object-cover md:h-12 xl:h-15" :src="images[review.user.avatar]" alt="User Avatar">
+            </div>
             <div class="pl-2 grow">
               <p class="text-4 font-medium leading-[150%] xl:text-5">
                 {{ review.user.name }}
@@ -108,20 +120,19 @@ const bind = computed(() => `url(${images.value[reviewsData[0].user.avatar]})`)
 </template>
 
 <style lang="css" scoped>
-.userAvatar::before {
+.userAvatarBG::after {
   content: '';
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
   opacity: 1;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;
   pointer-events: none;
+  @apply bg-[#ACFF24]/30;
+}
+
+.userAvatar {
   filter: saturate(0);
-  /* background-image: v-bind(bind); */
 }
 </style>
