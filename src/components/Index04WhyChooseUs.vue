@@ -10,7 +10,7 @@ const cardData: Card[] = [
 </script>
 
 <template>
-  <section class="ourServices">
+  <section class="whyChooseUs">
     <CategoryHero title="Why Choose SquareUp?" subheader="Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results." :bg="1" />
     <div class="p-0 container">
       <div class="cards grid grid-cols-1 md:grid-cols-2">

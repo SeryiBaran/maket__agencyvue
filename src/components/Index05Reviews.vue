@@ -75,7 +75,7 @@ const reviewsData: Review[] = [
 </script>
 
 <template>
-  <section class="ourServices">
+  <section class="reviews">
     <CategoryHero title="What our Clients say About us" subheader="At SquareUp, we take pride in delivering exceptional digital products and services that drive success for our clients. Here's what some of our satisfied clients have to say about their experience working with us" :bg="2" />
     <div class="p-0 container">
       <div class="grid grid-cols-1 overflow-hidden md:grid-cols-2">
@@ -87,7 +87,6 @@ const reviewsData: Review[] = [
           :initial="{ opacity: 0, x: 100 * (isEven(index) ? -1 : 1) }"
           :visible-once="{ opacity: 1, x: 0 }"
           :duration="400"
-          :delay="(isEven(index) ? 0 : 100)"
 
           class="px-6 py-10 border-b-1 border-greybrand-15 border-solid flex flex-col md:(px-15 py-20 border-r-1 last-border-r-0) xl:(px-20 py-25) last:border-b-0"
         >

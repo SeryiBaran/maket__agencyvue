@@ -11,6 +11,7 @@ defineOptions({
     <Index03OurServices />
     <Index04WhyChooseUs />
     <Index05Reviews />
+    <Index06FAQ />
   </div>
 </template>
 

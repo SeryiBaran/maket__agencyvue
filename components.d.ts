@@ -16,6 +16,7 @@ declare module 'vue' {
     Index03OurServices: typeof import('./src/components/Index03OurServices.vue')['default']
     Index04WhyChooseUs: typeof import('./src/components/Index04WhyChooseUs.vue')['default']
     Index05Reviews: typeof import('./src/components/Index05Reviews.vue')['default']
+    Index06FAQ: typeof import('./src/components/Index06FAQ.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheCounter: typeof import('./src/components/TheCounter.vue')['default']
