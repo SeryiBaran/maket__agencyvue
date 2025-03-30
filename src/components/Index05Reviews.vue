@@ -88,9 +88,7 @@ const bind = computed(() => `url(${images.value[reviewsData[0].user.avatar]})`)
             {{ review.description }}
           </p>
           <div class="mt-6 px-3.5 py-4.125 border border-greybrand-15 rounded-2 bg-[#242424]/20 flex gap-2.5 md:(mt-7.5 p-3.5) xl:(mt-10 px-5 py-5.375)">
-            <div class="userAvatarBG rounded-2 overflow-hidden">
-              <img :src="images[review.user.avatar]" class="userAvatar h-10 aspect-square object-cover md:h-12 xl:h-15">
-            </div>
+            <div class="userAvatar rounded-2 bg-[#ACFF24]/30 h-10 aspect-square relative overflow-hidden object-cover md:h-12 xl:h-15" :style="`background-image: url(${images[review.user.avatar]})`" />
             <div class="pl-2 grow">
               <p class="text-4 font-medium leading-[150%] xl:text-5">
                 {{ review.user.name }}
@@ -110,7 +108,7 @@ const bind = computed(() => `url(${images.value[reviewsData[0].user.avatar]})`)
 </template>
 
 <style lang="css" scoped>
-/* .userAvatarBG::before {
+.userAvatar::before {
   content: '';
   background-repeat: no-repeat;
   background-position: center center;
@@ -121,7 +119,9 @@ const bind = computed(() => `url(${images.value[reviewsData[0].user.avatar]})`)
   bottom: 0;
   right: 0;
   position: absolute;
+  z-index: -1;
   pointer-events: none;
-  filter: saturate(0) brightness(0.15);
-} */
+  filter: saturate(0);
+  /* background-image: v-bind(bind); */
+}
 </style>
