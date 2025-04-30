@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useAutoAnimate } from '@formkit/auto-animate/vue'
 import { nanoid } from 'nanoid'
 import { isEven } from '~/shared/utils'
 
@@ -67,7 +66,7 @@ function handleClick(id: string) {
   <section class="faq">
     <CategoryHero title="Frequently Asked Questions" subheader="Still you have any questions? Contact our Team via hello@squareup.com" :bg="3" />
     <div class="p-0 container">
-      <div class="grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+      <div class="grid grid-cols-1 overflow-hidden md:grid-cols-2">
         <div
           v-for="(faqPart, indexPart) in faqData"
           :key="indexPart"
@@ -93,7 +92,7 @@ function handleClick(id: string) {
             <p class="faqElemTitle text-4 font-medium leading-[150%] md:text-4.5 xl:text-5.5">
               {{ faqElem.title }}
             </p>
-            <i class="i-heroicons:plus-solid faqElemOpenCloseIcon text-inherit h-8 w-8 block" />
+            <i class="faqElemOpenCloseIcon i-heroicons:plus-solid text-inherit h-8 w-8 block" />
             <div v-auto-animate class="faqElemAnswer">
               <p v-if="faqElem.id === activeId" class="descriptionText leading-[150%]">
                 {{ faqElem.answer }}

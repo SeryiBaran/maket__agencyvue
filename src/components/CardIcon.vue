@@ -4,22 +4,23 @@ interface Props {
   showCornerGradient?: boolean
   inheritIconColor?: boolean
   enableHoverEffect?: boolean
-  textInsteadOfIcon?: string
+  textInsteadOfIcon?: string | null
 }
 
-const {
-  showCornerGradient = true,
-  inheritIconColor = false,
-  enableHoverEffect = true,
-  textInsteadOfIcon = null,
-  ...props
-} = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  showCornerGradient: true,
+  inheritIconColor: false,
+  enableHoverEffect: true,
+  textInsteadOfIcon: null,
+})
+
+const { icon, showCornerGradient, inheritIconColor, enableHoverEffect, textInsteadOfIcon } = toRefs(props)
 </script>
 
 <template>
-  <div class="cardIcon color-greenbrand-50 text-center flex h-14.5 min-w-14.5 items-center justify-center md:h-17.5 md:w-17.5 xl:h-22 xl:w-22" :class="{ showCornerGradient, inheritIconColor, enableHoverEffect }">
+  <div class="cardIcon color-greenbrand-50 text-center inline-flex h-14.5 min-w-14.5 items-center justify-center md:h-17.5 md:w-17.5 xl:h-22 xl:w-22" :class="{ showCornerGradient, inheritIconColor, enableHoverEffect }">
     <!-- min-w-14.5 is fix -->
-    <i v-if="!textInsteadOfIcon" class="icon" :class="[props.icon]" />
+    <i v-if="!textInsteadOfIcon" class="icon" :class="[icon]" />
     <span v-else class="icon textIcon text-5 font-semibold md:text-6 xl:text-7">{{ textInsteadOfIcon }}</span>
   </div>
 </template>

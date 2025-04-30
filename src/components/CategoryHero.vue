@@ -1,22 +1,32 @@
 <script lang="ts" setup>
-const { title, subheader, bg = 0 } = defineProps<{
+const props = withDefaults(defineProps<{
   title: string
   subheader: string
   bg?: number
-}>()
+  miniText?: boolean
+}>(), {
+  bg: 0,
+  miniText: false,
+})
 </script>
 
 <template>
   <div class="p-0 container">
-    <div class="bg1" :class="[`bg-${bg}`]">
+    <div class="bg1" :class="[`bg-${props.bg}`]">
       <div class="bg2">
         <div class="categoryHero px-4 py-12.5 text-center w-full md:py-25 xl:py-30">
-          <h2 v-motion-slide-visible-once-bottom :duration="300" class="text-7 font-semibold md:text-9.5 xl:text-12">
-            {{ title }}
+          <div v-if="$slots.top" class="mb-7 md:mb-10 xl:mb-12.5">
+            <slot name="top" />
+          </div>
+          <h2 v-motion-slide-visible-once-bottom :duration="300" class="text-7 font-semibold md:text-9.5 xl:text-12" :class="{ 'text-6 md:text-7.5 xl:text-9.5': props.miniText }">
+            {{ props.title }}
           </h2>
-          <p v-motion-fade-visible-once :duration="400" :delay="200" class="text-3.5 leading-6 mx-auto pt-1.5 max-w-1000px md:text-4 xl:text-4.5 md:pt-2.5 xl:pt-3.5">
-            {{ subheader }}
+          <p v-motion-fade-visible-once :duration="400" :delay="200" class="text-3.5 leading-6 mx-auto mt-1.5 max-w-1000px md:text-4 xl:text-4.5 md:mt-2.5 xl:mt-3.5">
+            {{ props.subheader }}
           </p>
+          <div v-if="$slots.bottom" class="mt-7 md:mt-10 xl:mt-12.5">
+            <slot name="bottom" />
+          </div>
         </div>
       </div>
     </div>

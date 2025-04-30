@@ -25,7 +25,7 @@ const cardData: Card[] = [
               {{ card.description }}
             </p>
           </div>
-          <RouterLink :to="card.link" class="cardLink button text-3.5 leading-6 mt-6 px-4 py-3.5 text-center rounded-2 w-full block xl:text-4.5 md:mt-15 xl:mt-20 xl:py-4.5">
+          <RouterLink :to="card.link" class="button cardLink text-3.5 leading-6 mt-6 px-4 py-3.5 text-center rounded-2 w-full block xl:text-4.5 md:mt-15 xl:mt-20 xl:py-4.5">
             Learn More
           </RouterLink>
         </div>

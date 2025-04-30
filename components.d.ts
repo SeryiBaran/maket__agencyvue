@@ -10,6 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     CardIcon: typeof import('./src/components/CardIcon.vue')['default']
     CategoryHero: typeof import('./src/components/CategoryHero.vue')['default']
+    ContactsSection: typeof import('./src/components/ContactsSection.vue')['default']
     Index01Hero: typeof import('./src/components/Index01Hero.vue')['default']
     Index02WhoUseUs: typeof import('./src/components/Index02WhoUseUs.vue')['default']
     Index03OurServices: typeof import('./src/components/Index03OurServices.vue')['default']
@@ -18,6 +19,7 @@ declare module 'vue' {
     Index06FAQ: typeof import('./src/components/Index06FAQ.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TextInput: typeof import('./src/components/input/TextInput.vue')['default']
     TheHeader: typeof import('./src/components/TheHeader.vue')['default']
     TheNav: typeof import('./src/components/TheNav.vue')['default']
   }
