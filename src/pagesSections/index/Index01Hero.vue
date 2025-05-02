@@ -17,14 +17,6 @@ onMounted(() => {
       },
       duration: 400,
     })
-    animate(btnRef2.value, {
-      scale: 1.1,
-      ease: 'inOut',
-      duration: 2000,
-      alternate: true,
-      loop: true,
-      delay: 400,
-    })
   }
 })
 </script>
