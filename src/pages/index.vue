@@ -36,9 +36,7 @@ function update([newVw, newVh, newRotate]: [string, string, number]) {
     x: newVw,
     rotate: newRotate,
     transition: {
-      type: 'keyframes', // spring
-      // stiffness: 350,
-      // damping: 20,
+      ease: 'linear',
     },
   })
 }

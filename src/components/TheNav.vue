@@ -26,15 +26,13 @@ const links = [
   >
     <ul class="flex gap-7.5">
       <li
-        v-for="link in links" :key="`${link.name}__ID__${link.link}`"
+        v-for="(link, linkIndex) in links" :key="`${link.name}__ID__${link.link}`"
         class="flex items-center"
       >
-        <RouterLink :to="link.link" active-class="activeLink" class="button buttonOutlineFocusVisible px-0 py-[12px] min-[1440px]:py-[14px] [&:not(.activeLink)]:(bg-transparent hover:not-active:bg-transparent)" @click="toggleBurgerMenu()">
-          {{ link.name }}
-        </RouterLink>
+        <NavLink :link :link-index @clicked="toggleBurgerMenu()" />
       </li>
       <li v-show="maxMd" class="flex items-center">
-        <RouterLink to="/contacts" class="contactButton button buttonPrimary">
+        <RouterLink to="/contacts" class="button contactButton buttonPrimary">
           Contact Us
         </RouterLink>
       </li>

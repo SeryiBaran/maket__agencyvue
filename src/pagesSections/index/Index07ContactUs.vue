@@ -11,7 +11,7 @@
         </div>
       </template>
       <template #bottom>
-        <RouterLink to="/contacts" class="button buttonPrimary buttonBig">
+        <RouterLink v-motion-slide-visible-once-bottom to="/contacts" class="button buttonPrimary buttonBig">
           Start Project
         </RouterLink>
       </template>

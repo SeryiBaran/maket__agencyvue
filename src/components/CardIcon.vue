@@ -18,7 +18,7 @@ const { icon, showCornerGradient, inheritIconColor, enableHoverEffect, textInste
 </script>
 
 <template>
-  <div class="cardIcon color-greenbrand-50 text-center inline-flex h-14.5 min-w-14.5 items-center justify-center md:h-17.5 md:w-17.5 xl:h-22 xl:w-22" :class="{ showCornerGradient, inheritIconColor, enableHoverEffect }">
+  <div class="cardIcon" :class="{ showCornerGradient, inheritIconColor, enableHoverEffect }">
     <!-- min-w-14.5 is fix -->
     <i v-if="!textInsteadOfIcon" class="icon" :class="[icon]" />
     <span v-else class="icon textIcon text-5 font-semibold md:text-6 xl:text-7">{{ textInsteadOfIcon }}</span>
@@ -39,9 +39,19 @@ const { icon, showCornerGradient, inheritIconColor, enableHoverEffect, textInste
 }
 
 .cardIcon {
+  @apply color-greenbrand-50 h-14.5 min-w-14.5 md:h-17.5 md:w-17.5 xl:h-22 xl:w-22;
+
   background-image: linear-gradient(to bottom, #242424 0%, #24242400 100%); /* 400% is magic number, FUCK FIGMA!!!! */
-  position: relative;
   z-index: 0;
+  position: relative;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
   border-radius: 10px;
 }
 
@@ -73,6 +83,27 @@ const { icon, showCornerGradient, inheritIconColor, enableHoverEffect, textInste
     linear-gradient(#000 0 0) content-box;
 }
 
+.cardIcon::after {
+  content: '';
+
+  @apply bg-greenbrand-90/10;
+
+  position: absolute;
+  pointer-events: none;
+
+  width: 60%;
+  height: 100%;
+
+  top: 0;
+  left: -150%;
+
+  transition-property: left;
+  transition-duration: 200ms;
+  transition-timing-function: linear;
+
+  transform: skew(45deg);
+}
+
 .cardIcon.enableHoverEffect {
   transition-duration: 200ms;
   transition-property: box-shadow, transform, background-color, --myBeforeGradientColor2;
@@ -88,6 +119,11 @@ const { icon, showCornerGradient, inheritIconColor, enableHoverEffect, textInste
 .cardIcon.enableHoverEffect:hover::before {
   --myBeforeGradientColor1: #9eff0080;
   --myBeforeGradientColor2: #9eff0080;
+}
+
+.cardIcon.enableHoverEffect:hover::after {
+  @apply bg-greenbrand-90/30;
+  left: 150%;
 }
 
 .icon {

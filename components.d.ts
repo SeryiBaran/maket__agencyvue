@@ -17,6 +17,7 @@ declare module 'vue' {
     Index04WhyChooseUs: typeof import('./src/components/Index04WhyChooseUs.vue')['default']
     Index05Reviews: typeof import('./src/components/Index05Reviews.vue')['default']
     Index06FAQ: typeof import('./src/components/Index06FAQ.vue')['default']
+    NavLink: typeof import('./src/components/NavLink.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TextInput: typeof import('./src/components/input/TextInput.vue')['default']
