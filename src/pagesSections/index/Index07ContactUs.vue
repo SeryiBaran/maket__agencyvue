@@ -6,7 +6,7 @@
   <section class="contactUs">
     <CategoryHero title="Thank you for your Interest in SquareUp." subheader="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us." :bg="2" :mini-text="true">
       <template #top>
-        <div class="logoIcon p-2.5 rounded-1.75 bg-greenbrand-50 inline-flex size-12.5 aspect-square items-center justify-center md:p-3 xl:p-4 xl:rounded-3.75 md:size-15 xl:size-20">
+        <div v-motion-pop-visible-once class="logoIcon p-2.5 rounded-1.75 bg-greenbrand-50 inline-flex size-12.5 aspect-square items-center justify-center md:p-3 xl:p-4 xl:rounded-3.75 md:size-15 xl:size-20">
           <img src="/assets/AbstractLogo.svg" alt="logo" class="">
         </div>
       </template>

@@ -17,12 +17,12 @@ const cardData: Card[] = [
         <div v-for="(card, index) in cardData" :key="card.title + card.icon" v-motion-fade-visible-once :duration="400" :delay="index * 50" class="card p-10 px-7.5 border-b-1 border-greybrand-15 border-solid flex flex-1 flex-col md:p-15 xl:p-20 last:border-b-0 md:border-r-1 md:last-border-r-0">
           <div class="grow">
             <div class="flex gap-3.5 items-center md:gap-5">
-              <CardIcon :icon="card.icon" />
-              <p class="cardTitle text-5 font-medium leading-[150%] xl:text-6.5">
+              <CardIcon v-motion-pop-visible-once :icon="card.icon" />
+              <p v-motion-pop-visible-once class="cardTitle text-5 font-medium leading-[150%] xl:text-6.5">
                 {{ card.title }}
               </p>
             </div>
-            <p class="cardDescription descriptionText leading-[150%] mt-6 md:mt-7.5 xl:mt-10">
+            <p v-motion-pop-visible-once class="cardDescription descriptionText leading-[150%] mt-6 md:mt-7.5 xl:mt-10">
               {{ card.description }}
             </p>
           </div>
