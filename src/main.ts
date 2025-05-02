@@ -26,3 +26,5 @@ app.use(router)
 app.use(MotionPlugin)
 app.use(autoAnimatePlugin)
 app.mount('#app')
+
+// TODO: replace all @vueuse/motion directives with my, based on AnimeJS

@@ -1,40 +1,31 @@
 <script lang="ts" setup>
-import { useMotion } from '@vueuse/motion'
+import { animate } from 'animejs'
 
-const button1 = ref(null)
-const button2 = ref(null)
+const btnsContainerRef = ref<HTMLButtonElement | null>(null)
+const btnRef2 = ref<HTMLButtonElement | null>(null)
 
-const refs = [button1, button2]
-
-refs.forEach((ref, index) => {
-  const { variant } = useMotion(ref, {
-    initial: {
-      y: 100,
-      opacity: 0,
-    },
-    enter: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 320,
-        damping: 20,
-        delay: 300 + index * 50,
-        onComplete: () => {
-          variant.value = 'levitate'
-        },
+onMounted(() => {
+  if (btnsContainerRef.value && btnRef2.value) {
+    animate(btnsContainerRef.value, {
+      opacity: {
+        from: 0,
+        to: 1,
       },
-    },
-    levitate: {
-      y: 10,
-      transition: {
-        duration: 1500,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: 'easeInOut',
-        repeatType: 'mirror',
+      y: {
+        from: 100,
+        to: 0,
       },
-    },
-  })
+      duration: 400,
+    })
+    animate(btnRef2.value, {
+      scale: 1.1,
+      ease: 'inOut',
+      duration: 2000,
+      alternate: true,
+      loop: true,
+      delay: 400,
+    })
+  }
 })
 </script>
 
@@ -52,13 +43,15 @@ refs.forEach((ref, index) => {
           For <span class="subheaderSelected">Startups</span> , <span class="subheaderSelected">Enterprise leaders</span> , <span class="subheaderSelected">Media & Publishers</span> and <span class="subheaderSelected">Social Good</span>
         </div>
         <!-- TODO: make cool buttons sitting animation -->
-        <div class="font-medium pt-10 flex gap-[13px] items-center justify-center">
-          <RouterLink ref="button1" to="/work" class="button buttonOutline">
+        <div ref="btnsContainerRef" class="buttonsContainer font-medium pt-10 flex gap-[13px] items-center justify-center">
+          <RouterLink to="/work" class="button buttonOutline">
             Our Works
           </RouterLink>
-          <RouterLink ref="button2" to="/work" class="button buttonPrimary">
-            Contact Us
-          </RouterLink>
+          <div ref="btnRef2">
+            <RouterLink to="/work" class="button buttonPrimary">
+              Contact Us
+            </RouterLink>
+          </div>
         </div>
       </div>
     </div>
@@ -110,5 +103,9 @@ refs.forEach((ref, index) => {
 }
 .subheaderSelected {
   @apply md:(inline-block rounded-2 px-2.5 py-2 xl:px-3.5 xl:py-3 text-white bg-greybrand-15);
+}
+
+.buttonsContainer {
+  perspective: 500px;
 }
 </style>

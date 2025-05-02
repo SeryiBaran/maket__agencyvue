@@ -24,6 +24,9 @@ importers:
       '@vueuse/motion':
         specifier: ^3.0.3
         version: 3.0.3(vue@3.5.13(typescript@5.8.2))
+      animejs:
+        specifier: ^4.0.2
+        version: 4.0.2
       nanoid:
         specifier: ^5.1.5
         version: 5.1.5
@@ -1547,6 +1550,9 @@ packages:
 
   alien-signals@1.0.3:
     resolution: {integrity: sha512-zQOh3wAYK5ujENxvBBR3CFGF/b6afaSzZ/c9yNhJ1ENrGHETvpUuKQsa93Qrclp0+PzTF93MaZ7scVp1uUozhA==}
+
+  animejs@4.0.2:
+    resolution: {integrity: sha512-f0L/kSya2RF23iMSF/VO01pMmLwlAFoiQeNAvBXhEyLzIPd2/QTBRatwGUqkVCC6seaAJYzAkGir55N4SL+h3A==}
 
   ansi-escapes@7.0.0:
     resolution: {integrity: sha512-GdYO7a61mR0fOlAsvC9/rIHf7L96sBc6dEWzeOu+KAea5bZyQRPIpojrVoI4AXGJS/ycu/fBTdLrUkA4ODrvjw==}
@@ -5316,6 +5322,8 @@ snapshots:
   alien-signals@0.2.2: {}
 
   alien-signals@1.0.3: {}
+
+  animejs@4.0.2: {}
 
   ansi-escapes@7.0.0:
     dependencies:

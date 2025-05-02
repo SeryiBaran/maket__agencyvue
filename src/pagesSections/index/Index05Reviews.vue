@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { Review } from '~/shared/types'
+import { animate, onScroll } from 'animejs'
 import { isEven } from '~/shared/utils'
 
 const images = ref<string[]>([]);
@@ -72,6 +73,27 @@ const reviewsData: Review[] = [
     },
   },
 ]
+
+const reviewsRefs = useTemplateRef('reviewsRefs')
+
+onMounted(() => {
+  if (reviewsRefs.value) {
+    reviewsRefs.value.forEach((review, index) => {
+      animate(review, {
+        opacity: {
+          from: 0,
+          to: 1,
+        },
+        x: {
+          from: 100 * (isEven(index) ? -1 : 1),
+          to: 0,
+        },
+        duration: 400,
+        autoplay: onScroll({ container: document.body, enter: '80%' }),
+      })
+    })
+  }
+})
 </script>
 
 <template>
@@ -80,13 +102,10 @@ const reviewsData: Review[] = [
     <div class="p-0 container">
       <div class="grid grid-cols-1 overflow-hidden md:grid-cols-2">
         <div
-          v-for="(review, index) in reviewsData"
+          v-for="(review) in reviewsData"
           :key="review.title"
 
-          v-motion
-          :initial="{ opacity: 0, x: 100 * (isEven(index) ? -1 : 1) }"
-          :visible-once="{ opacity: 1, x: 0 }"
-          :duration="400"
+          ref="reviewsRefs"
 
           class="px-6 py-10 border-b-1 border-greybrand-15 border-solid flex flex-col md:(px-15 py-20 border-r-1 last-border-r-0) xl:(px-20 py-25) last:border-b-0"
         >

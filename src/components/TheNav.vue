@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { animate, onScroll } from 'animejs'
+
 const props = defineProps<{
   showBurgerMenu: boolean
   toggleBurgerMenu: () => void
@@ -14,6 +16,28 @@ const links = [
   { name: 'About', link: '/about' },
   { name: 'Careers', link: '/careers' },
 ]
+
+const reviewsRefs = useTemplateRef('reviewsRefs')
+
+onMounted(() => {
+  if (reviewsRefs.value) {
+    reviewsRefs.value.forEach((review, index) => {
+      animate(review, {
+        opacity: {
+          from: 0,
+          to: 1,
+        },
+        y: {
+          from: -100,
+          to: 0,
+        },
+        duration: 400,
+        delay: 300 + index * 50,
+        autoplay: onScroll({ container: document.body, enter: '80%' }),
+      })
+    })
+  }
+})
 </script>
 
 <template>
@@ -27,7 +51,7 @@ const links = [
     <ul class="flex gap-7.5">
       <li
         v-for="(link, linkIndex) in links" :key="`${link.name}__ID__${link.link}`"
-        class="flex items-center"
+        ref="reviewsRefs" class="flex items-center justify-center"
       >
         <NavLink :link :link-index @clicked="toggleBurgerMenu()" />
       </li>
@@ -43,10 +67,6 @@ const links = [
 <style scoped>
 nav {
   backdrop-filter: blur(12px);
-}
-
-.activeLink {
-  @apply bg-greybrand-15 text-white px-[22px] min-[1440px]:px-[24px] font-semibold;
 }
 
 .burger {
