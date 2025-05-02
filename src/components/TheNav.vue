@@ -53,7 +53,9 @@ onMounted(() => {
         v-for="(link, linkIndex) in links" :key="`${link.name}__ID__${link.link}`"
         ref="reviewsRefs" class="flex items-center justify-center"
       >
-        <NavLink :link :link-index @clicked="toggleBurgerMenu()" />
+        <NavLink
+          :link :link-index @clicked="toggleBurgerMenu()"
+        />
       </li>
       <li v-show="maxMd" class="flex items-center">
         <RouterLink to="/contacts" class="button contactButton buttonPrimary">
@@ -79,9 +81,5 @@ nav {
 
 .burger li {
   @apply;
-}
-
-.burger a {
-  @apply flex w-full items-center justify-center;
 }
 </style>

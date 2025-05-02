@@ -17,7 +17,7 @@ const maxMd = useMediaQuery('(max-width: 767px)')
 
       <TheNav v-motion-slide-top :delay="60" :duration="400" :show-burger-menu :toggle-burger-menu />
 
-      <RouterLink v-show="!maxMd" v-motion-slide-top to="/contacts" class="contactButton button buttonPrimary" :delay="120" :duration="400">
+      <RouterLink v-show="!maxMd" v-motion-slide-top to="/contacts" class="button contactButton buttonPrimary" :delay="120" :duration="400">
         Contact Us
       </RouterLink>
 
@@ -41,7 +41,7 @@ header {
 }
 
 .container {
-  @apply border-none px-0 max-md:pt-10;
+  @apply border-none px-0 max-md:pt-10 overflow-visible;
   flex-direction: row;
 }
 

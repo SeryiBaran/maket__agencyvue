@@ -13,11 +13,11 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="flex items-center justify-center">
+  <div class="flex w-full items-center">
     <RouterLink
       :to="props.link.link"
       active-class="activeLink"
-      class="button buttonOutlineFocusVisible px-0 py-[12px] min-[1440px]:py-[14px] [&:not(.activeLink)]:(bg-transparent hover:not-active:bg-transparent)"
+      class="button buttonOutlineFocusVisible px-0 py-[12px] block min-[1440px]:py-[14px] [&:not(.activeLink)]:(bg-transparent hover:not-active:bg-transparent)"
       @click="() => emit('clicked')"
     >
       {{ props.link.name }}
