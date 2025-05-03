@@ -18,10 +18,12 @@ const { icon, showCornerGradient, inheritIconColor, enableHoverEffect, textInste
 </script>
 
 <template>
-  <div class="cardIcon" :class="{ showCornerGradient, inheritIconColor, enableHoverEffect }">
-    <!-- min-w-14.5 is fix -->
-    <i v-if="!textInsteadOfIcon" class="icon" :class="[icon]" />
-    <span v-else class="icon textIcon text-5 font-semibold md:text-6 xl:text-7">{{ textInsteadOfIcon }}</span>
+  <div class="cardIconContainer">
+    <div class="cardIcon" :class="{ showCornerGradient, inheritIconColor, enableHoverEffect }">
+      <!-- min-w-14.5 is fix -->
+      <i v-if="!textInsteadOfIcon" class="icon" :class="[icon]" />
+      <span v-else class="icon textIcon text-5 font-semibold md:text-6 xl:text-7">{{ textInsteadOfIcon }}</span>
+    </div>
   </div>
 </template>
 
@@ -111,7 +113,7 @@ const { icon, showCornerGradient, inheritIconColor, enableHoverEffect, textInste
 }
 
 .cardIcon.enableHoverEffect:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   @apply bg-greenbrand-50/20;
   box-shadow: 0 0 calc(var(--spacing) * 5) 0 color-mix(in oklch, var(--colors-greenbrand-50) 25%, transparent);
 }
