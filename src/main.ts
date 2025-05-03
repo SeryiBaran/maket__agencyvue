@@ -2,9 +2,8 @@ import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 import { MotionPlugin } from '@vueuse/motion'
 import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { routes } from 'vue-router/auto-routes'
 
-import App from './App.vue'
+import { routes } from 'vue-router/auto-routes'
 
 // import '@fontsource/barlow/400.css'
 // import '@fontsource/barlow/500.css'
@@ -13,6 +12,8 @@ import App from './App.vue'
 // import '@fontsource/barlow/800.css'
 // import '@fontsource/barlow/900.css'
 
+import App from './App.vue'
+import { vAnimSlide } from './directives/animation'
 import './styles/main.css'
 import 'uno.css'
 
@@ -25,6 +26,7 @@ const router = createRouter({
 app.use(router)
 app.use(MotionPlugin)
 app.use(autoAnimatePlugin)
+app.directive('anim-slide', vAnimSlide)
 app.mount('#app')
 
 // TODO: replace all @vueuse/motion directives with my, based on AnimeJS

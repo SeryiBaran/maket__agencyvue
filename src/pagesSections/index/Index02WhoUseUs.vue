@@ -20,10 +20,14 @@ const images = ref<string[]>([]);
         <div
           v-for="(url, index) in images"
           :key="index"
-          v-motion-slide-visible-once-right
+          v-anim-slide:settings.right="{
+            topVisibleY: '100%',
+            custom: {
+              duration: 200,
+              delay: 0 + index * 50,
+            },
+          }"
           class="companyIcon"
-          :delay="100 * index"
-          :duration="200"
         >
           <img :src="url">
         </div>

@@ -1,24 +1,5 @@
 <script lang="ts" setup>
-import { animate } from 'animejs'
 
-const btnsContainerRef = ref<HTMLButtonElement | null>(null)
-const btnRef2 = ref<HTMLButtonElement | null>(null)
-
-onMounted(() => {
-  if (btnsContainerRef.value && btnRef2.value) {
-    animate(btnsContainerRef.value, {
-      opacity: {
-        from: 0,
-        to: 1,
-      },
-      y: {
-        from: 100,
-        to: 0,
-      },
-      duration: 400,
-    })
-  }
-})
 </script>
 
 <template>
@@ -35,15 +16,13 @@ onMounted(() => {
           For <span class="subheaderSelected">Startups</span> , <span class="subheaderSelected">Enterprise leaders</span> , <span class="subheaderSelected">Media & Publishers</span> and <span class="subheaderSelected">Social Good</span>
         </div>
         <!-- TODO: make cool buttons sitting animation -->
-        <div ref="btnsContainerRef" class="buttonsContainer font-medium pt-10 flex gap-[13px] items-center justify-center">
+        <div v-anim-slide.bottom class="buttonsContainer font-medium pt-10 flex gap-[13px] items-center justify-center">
           <RouterLink to="/work" class="button buttonOutline">
             Our Works
           </RouterLink>
-          <div ref="btnRef2">
-            <RouterLink to="/work" class="button buttonPrimary">
-              Contact Us
-            </RouterLink>
-          </div>
+          <RouterLink to="/work" class="button buttonPrimary">
+            Contact Us
+          </RouterLink>
         </div>
       </div>
     </div>
