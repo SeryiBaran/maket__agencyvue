@@ -38,8 +38,8 @@ const formModel = reactive<FormModel>({
 })
 
 function handleSubmit() {
-  // eslint-disable-next-line no-console
-  console.log(formModel)
+  // eslint-disable-next-line no-alert
+  alert(formModel)
 }
 </script>
 
@@ -69,8 +69,8 @@ function handleSubmit() {
     <FormCard title="Your Message" class="sm:col-span-2">
       <TextInput v-model="formModel.message" :is-textarea="true" placeholder="Type here" />
     </FormCard>
-    <div class="submitBtnContainer">
-      <button @click.prevent="handleSubmit()">
+    <div class="submitBtnContainer text-center sm:col-span-2">
+      <button class="button buttonPrimary buttonBig font-medium xl:px-11 max-sm:w-full" @click.prevent="handleSubmit()">
         Submit
       </button>
     </div>
