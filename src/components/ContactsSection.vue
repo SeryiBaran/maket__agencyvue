@@ -21,9 +21,6 @@ interface FormModel {
   message: string
 }
 
-// TODO:
-// FIXME:
-// TODO: fix fucked inputs v-model
 const formModel = reactive<FormModel>({
   fullName: '',
   email: '',
@@ -39,14 +36,13 @@ const formModel = reactive<FormModel>({
 
 function handleSubmit() {
   // eslint-disable-next-line no-alert
-  alert(formModel)
+  alert(JSON.stringify(formModel))
 }
 </script>
 
 <template>
   <form class="contactsForm mx-auto p-6 border-1 border-b-0 border-greybrand-15 gap-7.5 grid grid-cols-1 w-full md:p-15 xl:p-20 xl:gap-10 sm:grid-cols-2 md:max-w-211.5 xl:max-w-265">
     <FormCard title="Full Name">
-      {{ formModel.fullName }}
       <TextInput v-model="formModel.fullName" placeholder="Type here" />
     </FormCard>
     <FormCard title="Email">
