@@ -28,6 +28,10 @@ export default defineConfig({
         },
         serif: 'DM Serif Display',
         mono: 'DM Mono',
+        inter: {
+          name: 'Inter',
+          weights: [300, 400, 500, 600, 700, 800, 900],
+        },
       },
     }),
   ],

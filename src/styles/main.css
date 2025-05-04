@@ -21,6 +21,11 @@ html.dark {
   color-scheme: dark;
 }
 
+/* presetWind4 DONT SUPPORTS `font-inter` (non-standard `dont-***` names). FUUUUUUUUCK */
+.font-inter {
+  font-family: 'Inter';
+}
+
 header,
 footer,
 main > section {
@@ -30,6 +35,8 @@ main > section {
 .container {
   @apply border border-solid border-greybrand-15 border-t-0 min-w-100% lg:min-w-auto p-4 md:p-5 flex flex-col mx-auto overflow-hidden;
 }
+
+/* TODO: move button to component with prop `mode: 'router-link' | 'link' | 'button'` */
 
 .button {
   @apply inline-block bg-greybrand-15 hover:not-active:bg-greybrand-20 rounded-2 text-greybrand-90 transition transition-[background-color,outline-width,transform] transition-duration-100 px-[20px] py-[12px] xl:px-[28px] xl:py-[15px] text-[14px] xl:text-[18px] outline-greenbrand-50/40 outline-solid outline-0;

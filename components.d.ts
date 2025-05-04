@@ -10,10 +10,13 @@ declare module 'vue' {
   export interface GlobalComponents {
     CardIcon: typeof import('./src/components/CardIcon.vue')['default']
     CategoryHero: typeof import('./src/components/CategoryHero.vue')['default']
+    Checkbox: typeof import('./src/components/input/Checkbox.vue')['default']
     ContactsSection: typeof import('./src/components/ContactsSection.vue')['default']
+    FormCard: typeof import('./src/components/FormCard.vue')['default']
     NavLink: typeof import('./src/components/NavLink.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Slider: typeof import('./src/components/input/Slider.vue')['default']
     TextInput: typeof import('./src/components/input/TextInput.vue')['default']
     TheHeader: typeof import('./src/components/TheHeader.vue')['default']
     TheNav: typeof import('./src/components/TheNav.vue')['default']

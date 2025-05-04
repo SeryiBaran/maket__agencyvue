@@ -1,5 +1,7 @@
 <script setup lang="ts">
-
+import { RouterLink } from 'vue-router'
+import CategoryHero from '~/components/CategoryHero.vue'
+import ContactsSection from '~/components/ContactsSection.vue'
 </script>
 
 <template>
