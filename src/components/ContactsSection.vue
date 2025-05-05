@@ -54,7 +54,7 @@ function handleSubmit() {
       </div>
     </FormCard>
     <FormCard title="Your Budget" description="Slide to indicate your budget range" class="sm:col-span-2" :big-y-padding="true">
-      <div class="mb-3.5 mt-2.5 flex grow">
+      <div class="mb-7.5 flex grow">
         <Slider v-model="formModel.budget" :min="500" :max="12500" :step="500" :show-thumb-tip="true" class="grow">
           <template #thumbTip="{ value }">
             ${{ value }}

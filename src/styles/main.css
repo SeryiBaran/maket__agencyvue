@@ -78,7 +78,7 @@ section {
 }
 
 .descriptionText {
-  @apply text-3.5 md:text-4 xl:text-4.5;
+  @apply text-3.5 md:text-4 xl:text-4.5 tracking-[-0.006em];
 }
 
 img {

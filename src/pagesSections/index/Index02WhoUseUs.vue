@@ -12,7 +12,7 @@ const images = ref<string[]>([]);
   <section class="whoUseUs">
     <div class="p-0 items-center container">
       <h2
-        class="text-3.5 text-greenbrand-99 font-medium mt-[max-content] px-[24px] py-[14px] border border-greybrand-15 rounded-full border-solid bg-greybrand-10 absolute xl:text-4.5 xl:leading-[110%] xl:px-[34px] xl:py-[20px]"
+        class="text-3.5 text-greenbrand-99 font-medium leading-100% mt-[max-content] px-[24px] py-[14px] border border-greybrand-15 rounded-full border-solid bg-greybrand-10 absolute xl:text-4.5 xl:leading-[110%] xl:px-[34px] xl:py-[20px]"
       >
         Trusted By 250+ Companies
       </h2>

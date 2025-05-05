@@ -21,11 +21,11 @@ const cardData: Card[] = [
                 {{ card.title }}
               </p>
             </div>
-            <p v-motion-slide-visible-once-left :duration="400" :delay="200" class="cardDescription text-3.5 leading-6 mt-6 md:text-4 xl:text-4.5 md:mt-3.5 xl:mt-5">
+            <p v-motion-slide-visible-once-left :duration="400" :delay="200" class="descriptionText cardDescription leading-[150%] tracking-[-0.006em] mt-6 md:mt-3.5 xl:mt-5">
               {{ card.description }}
             </p>
           </div>
-          <RouterLink v-motion-pop-visible-once :duration="400" :to="card.link" class="button cardLink text-3.5 leading-6 mt-6 px-4 py-3.5 text-center rounded-2 w-full block xl:text-4.5 md:mt-15 xl:mt-20 xl:py-4.5">
+          <RouterLink v-motion-pop-visible-once :duration="400" :to="card.link" class="button cardLink text-3.5 leading-[150%] mt-6 px-4 py-3.5 text-center rounded-2 w-full block xl:text-4.5 md:mt-15 xl:mt-20 xl:py-4.5">
             Learn More
           </RouterLink>
         </div>

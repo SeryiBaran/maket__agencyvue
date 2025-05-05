@@ -94,7 +94,7 @@ const reviewsData: Review[] = [
 
           class="px-6 py-10 border-b-1 border-greybrand-15 border-solid flex flex-col md:(px-15 py-20 border-r-1 last-border-r-0) xl:(px-20 py-25) last:border-b-0"
         >
-          <p class="text-5 text-greenbrand-80 font-medium leading-[150%] xl:text-7">
+          <p class="text-4.5 text-greenbrand-80 font-medium leading-[150%] md:text-5 xl:text-7">
             {{ review.title }}
           </p>
           <p class="descriptionText leading-[150%] mt-5 grow xl:mt-6">
@@ -104,7 +104,7 @@ const reviewsData: Review[] = [
             <div class="userAvatarBG rounded-1 bg-[#ACFF24]/30 h-10 w-10 relative overflow-hidden md:(rounded-1.5 h-12 w-12) xl:(rounded-2 h-15 w-15)">
               <img class="userAvatar aspect-square object-cover" :src="images[review.user.avatar]" alt="User Avatar">
             </div>
-            <div class="pl-2 grow">
+            <div class="pl-0.625 grow md:pl-2">
               <p class="text-4 font-medium leading-[150%] xl:text-5">
                 {{ review.user.name }}
               </p>

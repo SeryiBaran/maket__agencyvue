@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<{
     <p v-if="props.title" class="formCardTitle text-4 font-medium md:text-4.5 xl:text-5.5">
       {{ props.title }}
     </p>
-    <p v-if="props.description" class="formCardDesc mt-1.5 md:mt-3.5">
+    <p v-if="props.description" class="descriptionText formCardDesc text-greybrand-90 mt-1.5 md:mt-3.5">
       {{ props.description }}
     </p>
     <div class="formCardBody mt-3.5 p-0 md:mt-4 xl:mt-4">

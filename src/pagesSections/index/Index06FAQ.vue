@@ -89,7 +89,7 @@ function handleClick(id: string) {
             <div class="faqElemIcon">
               <CardIcon :enable-hover-effect="false" :inherit-icon-color="true" :text-instead-of-icon="String(getIndex(faqElem) + 1).padStart(2, '0')" :show-corner-gradient="false" class="h-13 min-w-13 md:h-15.5 md:w-15.5 xl:h-20 xl:w-20" />
             </div>
-            <p class="faqElemTitle text-4 font-medium leading-[150%] md:text-4.5 xl:text-5.5">
+            <p class="faqElemTitle text-4 font-medium leading-120% md:text-4.5 xl:text-5.5">
               {{ faqElem.title }}
             </p>
             <i class="faqElemOpenCloseIcon i-heroicons:plus-solid text-inherit h-8 w-8 block" />
@@ -107,7 +107,7 @@ function handleClick(id: string) {
 
 <style lang="css" scoped>
 .faqElem {
-  @apply grid gap-x-5 xl:gap-x-7.5;
+  @apply grid gap-x-5 xl:gap-x-7.5 gap-y-6 md:gap-y-1 xl:gap-y-0;
   grid-template-columns: min-content auto min-content;
   /* grid-template-areas:
     'faqElemIcon faqElemTitle faqElemOpenCloseIcon'
@@ -140,7 +140,13 @@ function handleClick(id: string) {
 .faqElemAnswer {
   grid-area: faqElemAnswer;
   grid-row: 2 / span 1;
-  grid-column: 2 / span 2;
+  grid-column: 1 / span 3;
+}
+
+@media (min-width: 640px) /* >sm */ {
+  .faqElemAnswer {
+    grid-column: 2 / span 2;
+  }
 }
 
 .faqElem.faqElemActive :where(.faqElemIcon, .faqElemTitle, .faqElemOpenCloseIcon) {
