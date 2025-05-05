@@ -5,13 +5,24 @@
 <template>
   <section class="hero max-md:px-0">
     <div class="pb-[205px] pt-20 items-center max-md:mx-0 md:pb-[274px] md:pt-28 container xl:h-200">
-      <div class="subContainer">
-        <h1
-          v-motion-slide-top :duration="400" :delay="100"
-          class="m-none text-8.5 font-semibold leading-[120%] md:text-12 xl:text-17"
+      <div
+        class="subContainer"
+      >
+        <div
+          v-anim-rotate:settings.top="{
+            custom: {
+              duration: 400,
+              delay: 200,
+            },
+          }"
         >
-          A Digital Product Studio<br>that will Work
-        </h1>
+          <h1
+            v-motion-slide-bottom :duration="400" :delay="200"
+            class="m-none text-8.5 font-semibold leading-[120%] md:text-12 xl:text-17"
+          >
+            A Digital Product Studio<br>that <span class="headerMainWord">will Work</span>
+          </h1>
+        </div>
         <div v-motion-slide-top :delay="200" :duration="300" class="subheader text-4 text-greybrand-60 mt-7.5 px-7.5 py-4.5 border border-greybrand-15 rounded-2 border-solid bg-[#242424]/20 gap-1.5 items-center md:text-4.5 xl:text-5.5 max-md:leading-[150%] xl:mt-10 xl:px-10 xl:py-6 xl:rounded-[10px] md:flex">
           For <span class="subheaderSelected">startups</span>, <span class="subheaderSelected">enterprise leaders</span>, <span class="subheaderSelected">media & publishers</span>, and <span class="subheaderSelected">social good</span><span class="md:hidden">.</span>
         </div>
@@ -67,6 +78,46 @@
   .container::after {
     background-size: 240%;
   }
+}
+
+@keyframes headerMainWordColorAnim {
+  0% {
+    color: inherit;
+  }
+  100% {
+    color: var(--colors-greenbrand-50) /* #9EFF00 */;
+  }
+}
+
+@keyframes headerMainWordAfterAnim {
+  0% {
+    transform: translateX(-101%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.headerMainWord {
+  @apply: relative overflow-hidden inline-block vertical-text-top;
+
+  animation-name: headerMainWordColorAnim;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.headerMainWord::after {
+  content: '';
+
+  @apply w-full absolute bottom-0 h-1 bg-greenbrand-50 left-0;
+
+  transform: translateX(-101%);
+
+  animation-name: headerMainWordAfterAnim;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 
 .subheader {

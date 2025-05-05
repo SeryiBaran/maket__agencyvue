@@ -13,7 +13,7 @@ import { routes } from 'vue-router/auto-routes'
 // import '@fontsource/barlow/900.css'
 
 import App from './App.vue'
-import { vAnimSlide } from './directives/animation'
+import { vAnimRotate, vAnimSlide } from './directives/animation'
 import './styles/main.css'
 import 'uno.css'
 
@@ -27,6 +27,7 @@ app.use(router)
 app.use(MotionPlugin)
 app.use(autoAnimatePlugin)
 app.directive('anim-slide', vAnimSlide)
+app.directive('anim-rotate', vAnimRotate)
 app.mount('#app')
 
 // TODO: replace all @vueuse/motion directives with my, based on AnimeJS
