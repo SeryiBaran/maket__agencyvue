@@ -52,16 +52,16 @@ export default defineConfig({
     // "2xl": "96rem"
     colors: {
       greenbrand: {
-        primary: '#ff3300',
-        DEFAULT: '#ff3300',
-        50: '#ff3300', // hsl(82.8, 100%, 50%)
-        60: '#ff5f33', // hsl(97.1, 100%, 60%)
-        70: '#ff8766', // hsl(82.7, 100%, 70%)
-        80: '#ffac99', // hsl(82.9, 100%, 80%)
-        90: '#ffdacc', // hsl(82.4, 100%, 90%)
-        95: '#ffede5', // hsl(83.1, 100%, 94.9%)
-        97: '#fff6f0', // hsl(84, 100%, 97.1%)
-        99: '#fffcfa', // hsl(84, 100%, 99%)
+        primary: '#9EFF00',
+        DEFAULT: '#9EFF00',
+        50: '#9EFF00',
+        60: '#81FF33',
+        70: '#C5FF66',
+        80: '#D8FF99',
+        90: '#ECFFCC',
+        95: '#F5FFE5',
+        97: '#F9FFF0',
+        99: '#FDFFFA',
       },
 
       greybrand: {
