@@ -66,7 +66,7 @@ function handleSubmit() {
       <TextInput v-model="formModel.message" :is-textarea="true" placeholder="Type here" />
     </FormCard>
     <div class="submitBtnContainer text-center sm:col-span-2">
-      <button class="button buttonPrimary buttonBig font-medium xl:px-11 max-sm:w-full" @click.prevent="handleSubmit()">
+      <button class="button buttonPrimary buttonBig font-medium md:(px-9 py-3.5) xl:(px-11 py-4.5) max-sm:w-full" @click.prevent="handleSubmit()">
         Submit
       </button>
     </div>

@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<{
 </script>
 
 <template>
-  <div class="p-0 container">
+  <div class="categoryHeroContainer p-0 container">
     <div class="bg1" :class="[`bg-${props.bg}`]">
       <div class="bg2">
         <div class="categoryHero px-4 py-12.5 text-center w-full md:py-25 xl:py-30">

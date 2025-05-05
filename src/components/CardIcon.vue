@@ -19,9 +19,9 @@ const { icon, showCornerGradient, inheritIconColor, enableHoverEffect, textInste
 
 <template>
   <div class="cardIconContainer">
-    <div class="cardIcon color-greenbrand-50 text-center inline-flex h-14.5 min-w-14.5 items-center justify-center relative z-0 overflow-hidden md:h-17.5 md:w-17.5 xl:h-22 xl:w-22" :class="{ showCornerGradient, inheritIconColor, enableHoverEffect }">
+    <div class="cardIcon color-greenbrand-50 text-center inline-flex h-14.5 w-14.5 items-center justify-center relative z-0 overflow-hidden md:h-17.5 md:w-17.5 xl:h-22 xl:w-22" :class="{ showCornerGradient, inheritIconColor, enableHoverEffect }">
       <!-- min-w-14.5 is fix -->
-      <i v-if="!textInsteadOfIcon" class="icon" :class="[icon]" />
+      <i v-if="!textInsteadOfIcon" class="icon iconSvg" :class="[icon]" />
       <span v-else class="icon textIcon text-5 font-semibold md:text-6 xl:text-7">{{ textInsteadOfIcon }}</span>
     </div>
   </div>
@@ -41,9 +41,21 @@ const { icon, showCornerGradient, inheritIconColor, enableHoverEffect, textInste
 }
 
 .cardIcon {
-  --border-radius: 10px;
+  --border-radius: 6px; /* <md */
   border-radius: var(--border-radius);
   background-image: linear-gradient(to bottom, #242424 0%, #24242400 100%); /* 400% is magic number, FUCK FIGMA!!!! */
+}
+
+@media (min-width: 768px) /* md */ {
+  .cardIcon {
+    --border-radius: 8px;
+  }
+}
+
+@media (min-width: 1440px) /* xl */ {
+  .cardIcon {
+    --border-radius: 12px;
+  }
 }
 
 .cardIcon.showCornerGradient {

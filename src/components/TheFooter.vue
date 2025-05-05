@@ -1,26 +1,32 @@
 <script lang="ts" setup>
 import { RouterLink } from 'vue-router'
 import { navLinks } from '~/shared/navLinks'
+
+const socialLinks = [
+  { icon: 'i-simple-icons-facebook', link: '' },
+  { icon: 'i-simple-icons-twitter', link: '' },
+  { icon: 'i-simple-icons-linkedin', link: '' },
+]
+
+const contacts = [
+  { icon: 'i-heroicons-envelope-solid', text: 'hello@squareup.com' },
+  { icon: 'i-heroicons-phone-solid', text: '+91 91813 23 2309' },
+  { icon: 'i-heroicons-map-pin-solid', text: 'Somewhere in the World' },
+]
 </script>
 
 <template>
-  <footer class="flex max-md:px-0">
+  <footer class="px-4 py-7.5 border border-0 border-t-1 border-greybrand-15 border-solid bg-greybrand-10 flex md:py-10 xl:py-12.5">
     <div class="p-0 border-none overflow-visible max-md:mx-0 container">
-      <div class="text-center flex flex-col">
-        <RouterLink to="/" class="self-center">
+      <div class="footerTopContainer font-medium text-center flex flex-col gap-7.5 grid grid-cols-1 items-center lg:flex-row lg:grid-cols-[1fr_auto_1fr]">
+        <RouterLink to="/" class="lg:justify-self-start max-lg:justify-self-center">
           <img src="/assets/Logo.svg" alt="Logo" class="h-12.5 md:h-10 xl:h-15">
         </RouterLink>
-        <nav class="leading-[150%] mt-7.5 pt-7.5 border-0 border-t-1 border-greybrand-15 border-solid flex gap-5">
-          <ul>
+        <nav class="font-medium border-0 border-t-1 border-greybrand-15 border-solid max-lg:pt-7.5 lg:border-t-0">
+          <ul class="flex flex-wrap gap-5 justify-center">
             <li
-              v-for="(link, linkIndex) in navLinks"
+              v-for="link in navLinks"
               :key="`${link.name}__ID__${link.link}`"
-              v-anim-slide:settings.top="{
-                custom: {
-                  delay: 300 + linkIndex * 50,
-                },
-                topVisibleY: '100%',
-              }"
               class="flex items-center justify-center"
             >
               <RouterLink
@@ -32,14 +38,37 @@ import { navLinks } from '~/shared/navLinks'
             </li>
           </ul>
         </nav>
+        <div class="socialIcons font-medium leading-[150%] p-4 border-1 border-greybrand-15 rounded-2 border-solid flex flex-col gap-3.5 items-center lg:p-2.5 lg:pl-6 lg:flex-row lg:gap-5 lg:justify-self-end">
+          <p>Stay Connected</p>
+          <div class="flex flex-wrap gap-2.5 justify-center">
+            <a v-for="link in socialLinks" :key="link.icon + link.link" :href="link.link"><CardIcon :enable-hover-effect="false" :icon="link.icon" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footerBottomContainer mt-7.5 border-0 border-greybrand-15 border-solid flex flex-col md:(mt-10 pt-10 border-t-1 flex-row items-center justify-between)">
+        <ul class="contacts flex flex-col lg:(flex-row gap-5.5)">
+          <li
+            v-for="contact in contacts"
+            :key="`${contact.icon}__ID__${contact.text}`"
+            class="text-4.5 text-greybrand-90 py-5 border-0 border-b-1 border-greybrand-15 border-solid flex gap-2.5 items-center justify-center lg:(text-4 py-0 pb-3 gap-1.5)"
+          >
+            <span :class="[contact.icon]" class="text-greenbrand-50 inline-block" /> {{ contact.text }}
+          </li>
+        </ul>
+        <p class="copyright text-greybrand-60 mt-5 text-center md:mt-0">
+          © 2023 SquareUp. All rights reserved.
+        </p>
       </div>
     </div>
   </footer>
 </template>
 
 <style lang="css" scoped>
-footer {
-  @apply border border-0 border-t-1 border-solid border-greybrand-15 px-4 md:px-5 sticky top--5 md:top-0 bg-greybrand-10 z-1 py-7.5 md:py-10 xl:py-12.5;
-  font-weight: 500;
+.socialIcons :deep(.cardIcon) {
+  @apply h-13 w-13 lg:h-13 lg:w-13 md:h-13 md:w-13 xl:h-16 xl:w-16;
+}
+
+.socialIcons :deep(.iconSvg) {
+  @apply h-5 w-5 md:h-5 md:w-5 xl:h-6 xl:w-6;
 }
 </style>

@@ -14,7 +14,7 @@ defineOptions({
 </script>
 
 <template>
-  <div>
+  <div class="pageMainContainer">
     <h1 class="text-xl left-0 top-0 absolute z-10000">
       АХТУНГ! Это пока даже не 10% макета!
     </h1>
