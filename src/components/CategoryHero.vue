@@ -37,7 +37,7 @@ const props = withDefaults(defineProps<{
 .categoryHero {
   position: relative;
   z-index: 0;
-  background: hsla(82.8, 100%, 50%, 0.035); /* color greenbrand-50 */
+  background: color-mix(in oklch, var(--colors-greenbrand-50) 3.5%, transparent); /* color greenbrand-50 */
 }
 .bg1 {
   position: relative;

@@ -120,8 +120,8 @@ const { icon, showCornerGradient, inheritIconColor, enableHoverEffect, textInste
 }
 
 .cardIcon.enableHoverEffect:hover::before {
-  --myBeforeGradientColor1: #9eff0080;
-  --myBeforeGradientColor2: #9eff0080;
+  --myBeforeGradientColor1: color-mix(in oklch, var(--colors-greenbrand-50) 80%, transparent);
+  --myBeforeGradientColor2: color-mix(in oklch, var(--colors-greenbrand-50) 80%, transparent);
 }
 
 .cardIcon.enableHoverEffect:hover::after {

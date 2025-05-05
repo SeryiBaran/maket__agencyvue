@@ -31,3 +31,4 @@ app.directive('anim-rotate', vAnimRotate)
 app.mount('#app')
 
 // TODO: replace all @vueuse/motion directives with my, based on AnimeJS
+// TODO: replace svg logo with css

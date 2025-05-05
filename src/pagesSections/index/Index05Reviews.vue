@@ -132,7 +132,7 @@ const reviewsData: Review[] = [
   right: 0;
   position: absolute;
   pointer-events: none;
-  @apply bg-[#ACFF24]/30;
+  @apply bg-greenbrand-50/30;
 }
 
 .userAvatar {

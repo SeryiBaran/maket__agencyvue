@@ -62,6 +62,16 @@ export default defineConfig({
         95: '#F5FFE5',
         97: '#F9FFF0',
         99: '#FDFFFA',
+        // primary: '#ff3300',
+        // DEFAULT: '#ff3300',
+        // 50: '#ff3300',
+        // 60: '#ff5f33',
+        // 70: '#ff8766',
+        // 80: '#ffac99',
+        // 90: '#ffdacc',
+        // 95: '#ffede5',
+        // 97: '#fff6f0',
+        // 99: '#fffcfa',
       },
 
       greybrand: {
