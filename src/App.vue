@@ -3,7 +3,7 @@ const mouse = useMouse({
   type: 'client',
 })
 
-const blobStyleString = computed(() => `background-image: radial-gradient(circle at ${mouse.x.value}px ${mouse.y.value}px, color-mix(in oklch, var(--colors-greenbrand-50) 5%, transparent) 0%, transparent 30%);`)
+const blobStyleString = computed(() => `background-image: radial-gradient(circle at ${mouse.x.value}px ${mouse.y.value}px, color-mix(in oklch, var(--colors-greenbrand-50) 5%, transparent) 0%, var(--colors-greybrand-10) 30%);`)
 </script>
 
 <template>

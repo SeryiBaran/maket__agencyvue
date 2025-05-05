@@ -40,9 +40,9 @@ export const vAnimSlide: Directive<HTMLElement> = {
 
 export const vAnimRotate: Directive<HTMLElement> = {
   mounted(el, binding) {
-    const path = 60
-    const xAngle = binding.modifiers.bottom && !binding.modifiers.top ? path : -path
-    const yAngle = binding.modifiers.right && !binding.modifiers.left ? path : -path
+    const degs = 60
+    const xAngle = binding.modifiers.bottom && !binding.modifiers.top ? degs : -degs
+    const yAngle = binding.modifiers.right && !binding.modifiers.left ? degs : -degs
 
     if (el.parentElement)
       el.parentElement.style.perspective = '400px'

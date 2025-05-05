@@ -58,8 +58,17 @@ onMounted(() => {
             A Digital Product Studio<br>that <span class="headerMainWord">will Work</span>
           </h1>
         </div>
-        <div v-motion-slide-top :delay="200" :duration="300" class="subheader text-4 text-greybrand-60 mt-7.5 px-7.5 py-4.5 border border-greybrand-15 rounded-2 border-solid bg-[#242424]/20 gap-1.5 items-center md:text-4.5 xl:text-5.5 max-md:leading-[150%] xl:mt-10 xl:px-10 xl:py-6 xl:rounded-[10px] md:flex">
-          For <span class="subheaderSelected">startups</span>, <span class="subheaderSelected">enterprise leaders</span>, <span class="subheaderSelected">media & publishers</span>, and <span class="subheaderSelected">social good</span><span class="md:hidden">.</span>
+        <div
+          v-anim-rotate:settings.top="{
+            custom: {
+              duration: 400,
+              delay: 200,
+            },
+          }"
+        >
+          <div v-motion-slide-top :delay="200" :duration="300" class="subheader text-4 text-greybrand-60 mt-7.5 px-7.5 py-4.5 border border-greybrand-15 rounded-2 border-solid bg-[#242424]/20 gap-1.5 items-center md:text-4.5 xl:text-5.5 max-md:leading-[150%] xl:mt-10 xl:px-10 xl:py-6 xl:rounded-[10px] md:flex">
+            For <span class="subheaderSelected">startups</span>, <span class="subheaderSelected">enterprise leaders</span>, <span class="subheaderSelected">media & publishers</span>, and <span class="subheaderSelected">social good</span><span class="md:hidden">.</span>
+          </div>
         </div>
         <!-- TODO: make cool buttons sitting animation -->
         <div v-anim-slide.bottom class="buttonsContainer font-medium pt-10 flex gap-[13px] items-center justify-center xl:pt-12.5">

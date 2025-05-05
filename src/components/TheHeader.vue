@@ -36,7 +36,7 @@ const maxMd = useMediaQuery('(max-width: 767px)')
 
 <style lang="css" scoped>
 header {
-  @apply border border-0 border-b-1 border-solid border-greybrand-15 px-4 md:px-5 sticky top--5 md:top-0 bg-greybrand-10 z-1;
+  @apply border border-0 border-b-1 border-solid border-greybrand-15 px-4 md:px-5 sticky top--5 md:top-0 bg-greybrand-10 z-2;
   font-weight: 500;
 }
 
