@@ -29,6 +29,7 @@ const links = navLinks.filter(link => link.link !== '/contacts')
         v-anim-slide:settings.top="{
           custom: {
             delay: 300 + linkIndex * 50,
+            autoplay: true,
           },
         }"
         class="flex items-center justify-center"
