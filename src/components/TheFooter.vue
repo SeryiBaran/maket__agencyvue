@@ -17,8 +17,8 @@ const contacts = [
 
 <template>
   <footer class="px-4 py-7.5 border border-0 border-t-1 border-greybrand-15 border-solid bg-greybrand-10 flex md:py-10 xl:py-12.5">
-    <div class="p-0 border-none overflow-visible max-md:mx-0 container">
-      <div class="footerTopContainer font-medium text-center flex flex-col gap-7.5 grid grid-cols-1 items-center lg:flex-row lg:grid-cols-[1fr_auto_1fr]">
+    <div class="p-0 border-none flex-col justify-center overflow-visible max-md:mx-0 container md:(flex-row) lg:(flex-col)">
+      <div class="footerTopContainer font-medium text-center flex flex-col gap-7.5 grid grid-cols-1 items-center lg:(mr-0 pr-0 border-r-0 flex-row grid-cols-[1fr_auto_1fr]) md:(mr-4 pr-4 border-r-1 border-greybrand-15)">
         <RouterLink to="/" class="lg:justify-self-start max-lg:justify-self-center">
           <img src="/assets/Logo.svg" alt="Logo" class="h-12.5 md:h-10 xl:h-15">
         </RouterLink>
@@ -45,12 +45,12 @@ const contacts = [
           </div>
         </div>
       </div>
-      <div class="footerBottomContainer mt-7.5 border-0 border-greybrand-15 border-solid flex flex-col md:(mt-10 pt-10 border-t-1 flex-row items-center justify-between)">
+      <div class="footerBottomContainer mt-7.5 border-0 border-greybrand-15 border-solid flex flex-col lg:(mt-10 pt-10 border-t-1 flex-row gap-0) md:(gap-2 items-center justify-between)">
         <ul class="contacts flex flex-col lg:(flex-row gap-5.5)">
           <li
             v-for="contact in contacts"
             :key="`${contact.icon}__ID__${contact.text}`"
-            class="text-4.5 text-greybrand-90 py-5 border-0 border-b-1 border-greybrand-15 border-solid flex gap-2.5 items-center justify-center lg:(text-4 py-0 pb-3 gap-1.5)"
+            class="text-4.5 text-greybrand-90 py-5 border-0 border-b-1 border-greybrand-15 border-solid flex gap-2.5 items-center lg:(text-4 py-0 pb-3 gap-1.5)"
           >
             <span :class="[contact.icon]" class="text-greenbrand-50 inline-block" /> {{ contact.text }}
           </li>
