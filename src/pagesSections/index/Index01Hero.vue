@@ -1,10 +1,45 @@
 <script lang="ts" setup>
+import type { AnimatableObject } from 'animejs'
+import { createAnimatable, utils } from 'animejs'
 
+const abstractBgRef = useTemplateRef('abstractBgRef')
+
+let animatable: AnimatableObject
+
+onMounted(() => {
+  if (abstractBgRef.value) {
+    let bounds = abstractBgRef.value.getBoundingClientRect()
+    const refreshBounds = (element: HTMLElement) => bounds = element.getBoundingClientRect()
+
+    animatable = createAnimatable(abstractBgRef.value, {
+      x: 500, // Define the x duration to be 500ms
+      y: 500, // Define the y duration to be 500ms
+      ease: 'out(3)',
+    })
+
+    const onMouseMove = (e: MouseEvent) => {
+      const { width, height, left, top } = bounds
+      const hw = width / 2
+      const hh = height / 2
+      const x = utils.clamp((e.clientX - left - hw) / 10, -100, 100)
+      const y = utils.clamp((e.clientY - top - hh) / 10, 0, 300)
+      animatable.x(x) // Animate the x value in 500ms
+      animatable.y(y) // Animate the y value in 500ms
+    }
+
+    window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('scroll', () => {
+      if (abstractBgRef.value)
+        refreshBounds(abstractBgRef.value)
+    })
+  }
+})
 </script>
 
 <template>
   <section class="hero max-md:px-0">
-    <div class="pb-[205px] pt-20 items-center max-md:mx-0 md:pb-[274px] md:pt-28 container xl:h-200">
+    <div class="pb-[205px] pt-20 items-center max-md:mx-0 md:pb-[274px] md:pt-28 container xl:h-200" style="perspective: 400px;">
+      <div ref="abstractBgRef" class="abstractBg" />
       <div
         class="subContainer"
       >
@@ -59,16 +94,16 @@
   pointer-events: none;
 }
 
-.container::after {
+.container .abstractBg {
   content: '';
   background: url('/assets/AbstractDesign.png');
   background-repeat: no-repeat;
   background-position: bottom;
   opacity: 1;
   top: 0;
-  left: 0;
+  left: -100px;
   bottom: 0;
-  right: 0;
+  right: -100px;
   position: absolute;
   z-index: -1;
   pointer-events: none;
