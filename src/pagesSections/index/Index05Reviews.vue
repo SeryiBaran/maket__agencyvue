@@ -112,7 +112,7 @@ const reviewsData: Review[] = [
                 {{ review.user.description }}
               </p>
             </div>
-            <a :href="review.user.site" class="button rounded-1.5 max-lg:hidden">
+            <a :href="review.user.site" class="button rounded-1.5 xl:px-5 xl:py-4.5 max-lg:hidden">
               Open Website
             </a>
           </div>

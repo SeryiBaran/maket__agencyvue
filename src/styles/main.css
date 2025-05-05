@@ -9,12 +9,13 @@ body,
   @apply bg-greybrand-10 text-white;
 }
 
-::selection {
-  background-color: color-mix(in oklch, var(--colors-greenbrand-50) 25%, transparent);
+#app {
+  display: flex;
+  flex-direction: column;
 }
 
-* {
-  @apply leading-[120%];
+::selection {
+  background-color: color-mix(in oklch, var(--colors-greenbrand-50) 25%, transparent);
 }
 
 html.dark {
@@ -30,6 +31,10 @@ header,
 footer,
 main > section {
   @apply max-md:px-4;
+}
+
+section {
+  @apply px-4;
 }
 
 .container {

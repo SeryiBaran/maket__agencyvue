@@ -81,7 +81,7 @@ function handleClick(id: string) {
             :visible-once="{ opacity: 1, x: 0 }"
             :duration="400"
 
-            class="faqElem px-6 py-7.5 border-t-1 border-greybrand-15 border-solid cursor-pointer md:(px-10 py-7.5) xl:(px-12.5 py-8.5) last:border-b-1"
+            class="faqElem px-6 py-7.5 border-t-1 border-greybrand-15 border-solid cursor-pointer md:(px-10 py-7.5) xl:(px-12.5 py-7.5) last:border-b-1"
             :class="{ faqElemActive: faqElem.id === activeId }"
 
             @click="() => handleClick(faqElem.id)"
@@ -107,7 +107,7 @@ function handleClick(id: string) {
 
 <style lang="css" scoped>
 .faqElem {
-  @apply grid gap-x-5;
+  @apply grid gap-x-5 xl:gap-x-7.5;
   grid-template-columns: min-content auto min-content;
   /* grid-template-areas:
     'faqElemIcon faqElemTitle faqElemOpenCloseIcon'
@@ -149,5 +149,9 @@ function handleClick(id: string) {
 
 .faqElem.faqElemActive .faqElemOpenCloseIcon {
   transform: rotateZ(45deg);
+}
+
+:deep(.cardIcon) {
+  @apply xl:h-20 xl:w-20;
 }
 </style>

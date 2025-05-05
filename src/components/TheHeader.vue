@@ -15,7 +15,7 @@ const maxMd = useMediaQuery('(max-width: 767px)')
         </RouterLink>
       </div>
 
-      <TheNav v-motion-slide-top :delay="60" :duration="400" :show-burger-menu :toggle-burger-menu />
+      <TheHeaderNav v-motion-slide-top :delay="60" :duration="400" :show-burger-menu @close-burger-menu="toggleBurgerMenu(false)" />
 
       <RouterLink v-show="!maxMd" v-motion-slide-top to="/contacts" class="button contactButton buttonPrimary" :delay="120" :duration="400">
         Contact Us

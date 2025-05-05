@@ -8,7 +8,7 @@
       <div class="subContainer">
         <h1
           v-motion-slide-top :duration="400" :delay="100"
-          class="m-none text-8.5 font-semibold md:text-12 xl:text-17"
+          class="m-none text-8.5 font-semibold leading-[120%] md:text-12 xl:text-17"
         >
           A Digital Product Studio<br>that will Work
         </h1>
@@ -16,7 +16,7 @@
           For <span class="subheaderSelected">Startups</span> , <span class="subheaderSelected">Enterprise leaders</span> , <span class="subheaderSelected">Media & Publishers</span> and <span class="subheaderSelected">Social Good</span>
         </div>
         <!-- TODO: make cool buttons sitting animation -->
-        <div v-anim-slide.bottom class="buttonsContainer font-medium pt-10 flex gap-[13px] items-center justify-center">
+        <div v-anim-slide.bottom class="buttonsContainer font-medium pt-10 flex gap-[13px] items-center justify-center xl:pt-12.5">
           <RouterLink to="/work" class="button buttonOutline">
             Our Works
           </RouterLink>

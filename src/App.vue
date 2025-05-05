@@ -3,7 +3,7 @@
 
 <template>
   <TheHeader />
-  <main>
+  <main class="flex grow flex-col h-full">
     <RouterView v-slot="{ Component }">
       <Transition name="fade" mode="out-in">
         <component :is="Component" />

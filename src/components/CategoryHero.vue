@@ -18,10 +18,10 @@ const props = withDefaults(defineProps<{
           <div v-if="$slots.top" class="mb-7 md:mb-10 xl:mb-12.5">
             <slot name="top" />
           </div>
-          <h2 v-motion-slide-visible-once-bottom :duration="300" class="text-7 font-semibold md:text-9.5 xl:text-12" :class="{ 'text-6 md:text-7.5 xl:text-9.5': props.miniText }">
+          <h2 v-motion-slide-visible-once-bottom :duration="300" class="text-7 font-semibold leading-[120%] mx-auto max-w-[896px] md:text-9.5 xl:text-12" :class="{ 'text-6 md:text-7.5 xl:text-9.5': props.miniText }">
             {{ props.title }}
           </h2>
-          <p v-motion-fade-visible-once :duration="400" :delay="200" class="text-3.5 leading-6 mx-auto mt-1.5 max-w-1000px md:text-4 xl:text-4.5 md:mt-2.5 xl:mt-3.5">
+          <p v-motion-fade-visible-once :duration="400" :delay="200" class="text-3.5 leading-[150%] mx-auto mx-auto mt-1.5 max-w-[896px] md:text-4 xl:text-4.5 md:mt-2.5 xl:mt-3.5" :class="{ 'tracking-[-0.006em] text-greybrand-90': props.miniText }">
             {{ props.subheader }}
           </p>
           <div v-if="$slots.bottom" class="mt-7 md:mt-10 xl:mt-12.5">

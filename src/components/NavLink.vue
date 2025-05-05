@@ -17,7 +17,7 @@ const emit = defineEmits<{
     <RouterLink
       :to="props.link.link"
       active-class="activeLink"
-      class="button buttonOutlineFocusVisible px-0 py-[12px] block min-[1440px]:py-[14px] [&:not(.activeLink)]:(bg-transparent hover:not-active:bg-transparent)"
+      class="button buttonOutlineFocusVisible px-0 py-3 block xl:py-3.5 [&:not(.activeLink)]:(bg-transparent hover:not-active:bg-transparent)"
       @click="() => emit('clicked')"
     >
       {{ props.link.name }}
@@ -27,6 +27,6 @@ const emit = defineEmits<{
 
 <style scoped>
 .activeLink {
-  @apply bg-greybrand-15 text-white px-[22px] min-[1440px]:px-[24px] font-semibold;
+  @apply bg-greybrand-15 text-white px-5.5 xl:px-7 font-semibold;
 }
 </style>

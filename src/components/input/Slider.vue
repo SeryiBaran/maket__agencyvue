@@ -50,7 +50,9 @@ const model = defineModel<number[]>()
 
 <style scoped>
 .thumb {
-  @apply outline-0 outline-greybrand-30 outline-solid rounded-full bg-greenbrand-50 h-4 w-4 block outline-4 xl:outline-8 cursor-pointer;
+  /* TODO: non-design, but it looks better */
+  /* to style as in design, replace outline with border, remove transition and replace `w-4 h-4` `thumb size` with `thumb size+border size` */
+  @apply outline-0 outline-greybrand-30 outline-solid rounded-full bg-greenbrand-50 h-4 w-4 block focus:(outline-4 xl:outline-8) cursor-pointer;
 
   transition-property: outline-width;
   transition-duration: 100ms;

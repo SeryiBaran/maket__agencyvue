@@ -18,7 +18,9 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     Slider: typeof import('./src/components/input/Slider.vue')['default']
     TextInput: typeof import('./src/components/input/TextInput.vue')['default']
+    TheFooter: typeof import('./src/components/TheFooter.vue')['default']
     TheHeader: typeof import('./src/components/TheHeader.vue')['default']
+    TheHeaderNav: typeof import('./src/components/TheHeaderNav.vue')['default']
     TheNav: typeof import('./src/components/TheNav.vue')['default']
   }
 }

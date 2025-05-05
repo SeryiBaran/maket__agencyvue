@@ -1,19 +1,17 @@
 <script lang="ts" setup>
+import { navLinks } from '~/shared/navLinks'
+
 const props = defineProps<{
   showBurgerMenu: boolean
-  toggleBurgerMenu: () => void
+}>()
+
+const emit = defineEmits<{
+  closeBurgerMenu: []
 }>()
 
 const maxMd = useMediaQuery('(max-width: 767px)')
 
-const links = [
-  { name: 'Home', link: '/' },
-  { name: 'Services', link: '/services' },
-  { name: 'Work', link: '/work' },
-  { name: 'Process', link: '/process' },
-  { name: 'About', link: '/about' },
-  { name: 'Careers', link: '/careers' },
-]
+const links = navLinks.filter(link => link.link !== '/contacts')
 </script>
 
 <template>
@@ -36,7 +34,7 @@ const links = [
         class="flex items-center justify-center"
       >
         <NavLink
-          :link :link-index @clicked="toggleBurgerMenu()"
+          :link :link-index @clicked="emit('closeBurgerMenu')"
         />
       </li>
       <li v-show="maxMd" class="flex items-center">
