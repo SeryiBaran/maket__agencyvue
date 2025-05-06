@@ -35,6 +35,10 @@ html.dark {
   @apply border border-solid border-greybrand-15 border-t-0 min-w-100% lg:min-w-auto p-4 md:p-5 flex flex-col mx-auto overflow-hidden;
 }
 
+.pageMainContainer > section > .container:not(.noBgColorContainer) {
+  @apply bg-greybrand-10/70;
+}
+
 .pageMainContainer > section:last-child > .container:not(.categoryHeroContainer) {
   @apply border-b-0;
 }

@@ -94,6 +94,7 @@ const reviewsData: Review[] = [
 
           class="px-6 py-10 border-b-1 border-greybrand-15 border-solid flex flex-col md:(px-15 py-20 border-r-1 last-border-r-0) xl:(px-20 py-25) last:border-b-0"
         >
+          <CardBg />
           <p class="text-4.5 text-greenbrand-80 font-medium leading-[150%] md:text-5 xl:text-7">
             {{ review.title }}
           </p>

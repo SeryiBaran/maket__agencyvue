@@ -16,7 +16,26 @@ const contacts = [
 </script>
 
 <template>
-  <footer class="px-4 py-7.5 border border-0 border-t-1 border-greybrand-15 border-solid bg-greybrand-10 flex md:py-10 xl:py-12.5">
+  <footer class="px-4 py-7.5 border border-0 border-t-1 border-greybrand-15 border-solid bg-greybrand-10 flex relative md:py-10 xl:py-12.5">
+    <div class="footerWavesBg text-greenbrand-50 opacity-5 pointer-events-none bottom-0 left-0 right-0 top-0 absolute z-0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="pattern__footerWavesBg" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="rotate(21)">
+
+            <!-- <svg width="64" height="64" viewBox="0 0 64 64">
+              <line x1="0" y1="0" x2="64" y2="64" stroke="currentColor" stroke-width="1" opacity="1" />
+            </svg> -->
+
+            <svg width="64" height="64" viewBox="0 0 64 64">
+              <path d="M 64 0 L 0 0 L 0 64" stroke="currentColor" stroke-width="1" fill="none" opacity="1" />
+            </svg>
+
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="#00000000" />
+        <rect width="100%" height="100%" fill="url(#pattern__footerWavesBg)" />
+      </svg>
+    </div>
     <div class="p-0 border-none flex-col justify-center overflow-visible max-md:mx-0 container md:(flex-row) lg:(flex-col)">
       <div class="footerTopContainer font-medium text-center flex flex-col gap-7.5 grid grid-cols-1 items-center lg:(mr-0 pr-0 border-r-0 flex-row grid-cols-[1fr_auto_1fr]) md:(mr-4 pr-4 border-r-1 border-greybrand-15)">
         <RouterLink to="/" class="lg:justify-self-start max-lg:justify-self-center">

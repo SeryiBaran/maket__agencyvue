@@ -54,14 +54,14 @@ export default defineConfig({
       greenbrand: {
         primary: '#9EFF00',
         DEFAULT: '#9EFF00',
-        50: '#9EFF00',
-        60: '#81FF33',
-        70: '#C5FF66',
-        80: '#D8FF99',
-        90: '#ECFFCC',
-        95: '#F5FFE5',
-        97: '#F9FFF0',
-        99: '#FDFFFA',
+        50: '#9EFF00', // hsl(82.8, 100%, 50%)
+        60: '#81FF33', // hsl(97.1, 100%, 60%)
+        70: '#C5FF66', // hsl(82.7, 100%, 70%)
+        80: '#D8FF99', // hsl(82.9, 100%, 80%)
+        90: '#ECFFCC', // hsl(82.4, 100%, 90%)
+        95: '#F5FFE5', // hsl(83.1, 100%, 94.9%)
+        97: '#F9FFF0', // hsl(84, 100%, 97.1%)
+        99: '#FDFFFA', // hsl(84, 100%, 99%)
         // primary: '#ff3300',
         // DEFAULT: '#ff3300',
         // 50: '#ff3300',

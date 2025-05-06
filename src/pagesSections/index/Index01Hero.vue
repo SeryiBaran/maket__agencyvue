@@ -38,8 +38,11 @@ onMounted(() => {
 
 <template>
   <section class="hero max-md:px-0">
-    <div class="pb-[205px] pt-20 items-center max-md:mx-0 md:pb-[274px] md:pt-28 container xl:h-200" style="perspective: 400px;">
+    <div class="noBgColorContainer pb-[205px] pt-20 items-center max-md:mx-0 md:pb-[274px] md:pt-28 container xl:h-200" style="perspective: 400px;">
       <div ref="abstractBgRef" class="abstractBg" />
+      <div class="blobsBg text-greenbrand-50">
+        blobs
+      </div>
       <div
         class="subContainer"
       >
@@ -116,6 +119,15 @@ onMounted(() => {
   position: absolute;
   z-index: -1;
   pointer-events: none;
+}
+
+.blobsBg {
+}
+
+.blobsBg svg {
+  @apply block h-70 w-70 absolute;
+  /* backdrop-filter: blur(10px);
+  filter: blur(10px); */
 }
 
 @media (max-width: 767px) {

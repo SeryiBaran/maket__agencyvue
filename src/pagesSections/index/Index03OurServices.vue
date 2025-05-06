@@ -13,8 +13,9 @@ const cardData: Card[] = [
     <CategoryHero title="Our Services" subheader="Transform your brand with our innovative digital solutions that captivate and engage your audience." :bg="0" />
     <div class="p-0 container">
       <div class="cards flex flex-col md:flex-row">
-        <div v-for="(card, index) in cardData" :key="card.title + card.icon" v-motion-fade-visible-once :duration="400" :delay="index * 50" class="card p-7.5 border-b-1 border-greybrand-15 border-solid flex flex-1 flex-col md:p-10 xl:p-12.5 last:border-b-0 md:border-r-1 md:last-border-r-0">
+        <div v-for="(card, index) in cardData" :key="card.title + card.icon" v-motion-fade-visible-once :duration="400" :delay="index * 50" class="card cardGridBg p-7.5 border-b-1 border-greybrand-15 border-solid flex flex-1 flex-col md:p-10 xl:p-12.5 last:border-b-0 md:border-r-1 md:last-border-r-0">
           <div class="grow">
+            <CardBg />
             <div class="flex gap-3.5 items-center md:block">
               <CardIcon v-motion-pop-visible-once :icon="card.icon" :duration="300" />
               <p v-motion-slide-visible-once-right :duration="400" :delay="200" class="cardTitle text-5 font-semibold leading-[150%] md:text-6 xl:text-7.5 md:mt-7.5 xl:mt-10">
