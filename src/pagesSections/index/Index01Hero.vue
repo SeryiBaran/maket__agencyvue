@@ -41,7 +41,7 @@ onMounted(() => {
     <div class="noBgColorContainer pb-[205px] pt-20 items-center max-md:mx-0 md:pb-[274px] md:pt-28 container xl:h-200" style="perspective: 400px;">
       <div ref="abstractBgRef" class="abstractBg" />
       <div class="blobsBg text-greenbrand-50">
-        blobs
+        <span class="text-sm px-2 py-1 rounded-1 bg-greybrand-15">TODO: blobs</span>
       </div>
       <div
         class="subContainer"
@@ -180,7 +180,7 @@ onMounted(() => {
   backdrop-filter: blur(6px);
 }
 .subheaderSelected {
-  @apply md:(inline-block rounded-2 px-2.5 py-2 xl:px-3.5 xl:py-3 text-white bg-greybrand-15 capitalize);
+  @apply md:(inline-block rounded-2 px-2.5 py-2 xl:px-3.5 xl:py-3 text-white bg-greybrand-15 capitalize border-1 border-solid border-greybrand-20);
 }
 
 .buttonsContainer {
