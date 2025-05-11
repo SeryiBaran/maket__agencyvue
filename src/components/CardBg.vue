@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="cardBg text-greenbrand-50 opacity-4 pointer-events-none bottom-0 left-0 right-0 top-0 absolute z-0">
+  <div class="cardBg text-greenbrand-50 opacity-2 pointer-events-none bottom-0 left-0 right-0 top-0 absolute z-0">
     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
       <defs>
         <pattern
@@ -13,7 +13,7 @@
           patternTransform="rotate(30)scale(2)"
           patternUnits="userSpaceOnUse"
         >
-          <rect width="100%" height="100%" fill="#2b2b31" />
+          <rect width="100%" height="100%" fill="transparent" />
           <path fill="none" stroke="currentColor" d="M0 10h20z" />
         </pattern>
       </defs>

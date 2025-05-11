@@ -36,7 +36,7 @@ html.dark {
 }
 
 .pageMainContainer > section > .container:not(.noBgColorContainer) {
-  @apply bg-greybrand-10/70;
+  @apply bg-greybrand-10/75;
 }
 
 .pageMainContainer > section:last-child > .container:not(.categoryHeroContainer) {

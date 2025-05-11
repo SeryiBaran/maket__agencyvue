@@ -41,6 +41,19 @@ const mouse = useMouse({
   type: 'client',
 })
 
+/*
+make something like:
+
+```
+const initialPatternOpacity: number = 100
+const patternBlobColor: string = 'rgba(var(--c-bg-40), 10%)'
+const patternBgColor: string = `rgba(var(--c-page-bg), ${initialPatternOpacity}%)`
+const patternBlobRadiusPx: number = 200
+
+const blobStyleString = computed(() => `background-image: radial-gradient(circle at ${(mouse.x.value / windowSize.width.value) * 100}% ${(mouse.y.value / windowSize.height.value) * 100}%, ${patternBlobColor} 0%, ${patternBgColor} ${patternBlobRadiusPx}px);`)
+```
+*/
+
 const blobStyleString = computed(() => `background-image: radial-gradient(circle at ${mouse.x.value}px ${mouse.y.value}px, color-mix(in oklch, var(--colors-greenbrand-50) 10%, transparent) 0%, var(--colors-greybrand-10) 30%);`)
 </script>
 
